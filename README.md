@@ -1,7 +1,7 @@
 # Tutorials of aah web framework for Go
 
-Source code available under MIT License
+Source code available under [![License](https://img.shields.io/github/license/go-aah/tutorials.svg)](LICENSE)
 
-Content available under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+Content available under [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-blue.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 Visit https://docs.aahframework.org/tutorials.html to learn more.
