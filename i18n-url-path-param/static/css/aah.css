@@ -1,0 +1,72 @@
+/*
+Minimal aah framework application template CSS.
+Based on your need choose your CSS framework.
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.welcome-msg {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+}
+
+.text-muted {
+  font-size: 12px;
+  color: #757373;
+}
+
+.goal {
+  font-size: 14px;
+  color: #484747;
+}
+
+.lang-links {
+  margin-bottom: 50px;
+}
+
+.lang-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.lang-links a:hover {
+  text-decoration: underline;
+  color: #0045b5;
+}

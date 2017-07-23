@@ -1,0 +1,16 @@
+#############################################
+# i18n messages for i18n application
+#
+# Complete configuration reference:
+#   https://docs.aahframework.org/i18n.html
+#############################################
+
+page {
+  app {
+    index {
+      title = "Tutorial - i18n | Aah Web-Framework für Go"
+      welcome_text = "Willkommen bei aah Framework - Web Application"
+      notes = "Sie können Internationalisierung und Lokalisierung durch Anwendung von Aah-Konfiguration und Konvention erreichen. Zero Coding-Aufwand! Das ist schön."
+    }
+  }
+}
