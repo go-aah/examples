@@ -1,0 +1,42 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.manage_users.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+
+<div class="container">
+  <div class="row text-center" style="margin-top:5%">
+    <h2>Manage Users Page</h2><br>
+    <p class="mtop15">This is page shown to user who have role (manager or administrator) and permission ("users:manage:view")</p>
+    <br><br>
+    <div class="row mtop15">
+      <div class="container col-xs-7 col-xs-offset-3">
+        <div class="text-center">
+          <h4>Demo Links</h4>
+        </div>
+        <table class="table table-striped text-left">
+          <thead>
+            <tr>
+              <th>Link</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ if eq (hasrole . "administrator") (ispermitted . "users:manage:edit") }}
+            <tr>
+              <td><a href="#">Edit User</a></td>
+              <td>Shown to users who have role `administrator` and permission `users:manage:edit`</td>
+            </tr>
+            {{ end }}
+            <tr>
+              <td><a href="{{ rurl . "index" }}">Home</a><br></td>
+              <td>To go to Homepage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{- end }}

@@ -1,0 +1,42 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.dashboard.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+
+<div class="container">
+  <div class="row text-center">
+    <h3>This is admin dashboard page</h3><br><br>
+    <p>Shown to users who have role "administrator"</p>
+    <br><br>
+    <div class="row mtop15">
+      <div class="container col-xs-7 col-xs-offset-3">
+        <div class="text-center">
+          <h4>Demo Links</h4>
+        </div>
+        <table class="table table-striped text-left">
+          <thead>
+            <tr>
+              <th>Link</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ if (ispermitted . "users:manage:view") (hasanyrole . "manager" "administrator") }}
+            <tr>
+              <td><a href="{{ rurl . "manage_users" }}">Manage Users</a></td>
+              <td>Shown to users who have permission "users:manage:view"</td>
+            </tr>
+            {{ end }}
+            <tr>
+              <td><a href="{{ rurl . "index" }}">Home</a><br></td>
+              <td>To go to Homepage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{- end }}
