@@ -22,7 +22,7 @@
             </tr>
           </thead>
           <tbody>
-            {{ if eq (hasrole . "administrator") (ispermitted . "users:manage:edit") }}
+            {{ if (hasrole . "administrator") (ispermitted . "users:manage:edit") }}
             <tr>
               <td><a href="#">Edit User</a></td>
               <td>Shown to users who have role `administrator` and permission `users:manage:edit`</td>

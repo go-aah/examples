@@ -6,6 +6,8 @@ import (
 	"aahframework.org/security.v0/authc"
 )
 
+var _ authc.Authenticator = (*FormAuthenticationProvider)(nil)
+
 // FormAuthenticationProvider struct implements `authc.Authenticator` interface.
 type FormAuthenticationProvider struct {
 	// for demo purpose in-memory subject (aka user) info's
@@ -55,14 +57,14 @@ func (fa *FormAuthenticationProvider) Init(cfg *config.Config) error {
 }
 
 // GetAuthenticationInfo method is `authc.Authenticator` interface
-func (fa *FormAuthenticationProvider) GetAuthenticationInfo(authcToken *authc.AuthenticationToken) *authc.AuthenticationInfo {
+func (fa *FormAuthenticationProvider) GetAuthenticationInfo(authcToken *authc.AuthenticationToken) (*authc.AuthenticationInfo, error) {
 
 	if ai, found := fa.users[authcToken.Identity]; found {
-		return &ai
+		return &ai, nil
 	}
 
 	// No subject found, return nil
-	return nil
+	return nil, authc.ErrSubjectNotExists
 }
 
 func postAuthEvent(e *aah.Event) {

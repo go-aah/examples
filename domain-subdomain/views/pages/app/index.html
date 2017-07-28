@@ -10,6 +10,23 @@
         <div class="row">
           <strong>Host/Domain:</strong> {{ .Host }}
         </div>
+
+        <div class="row">
+          <h3>Named Subdomain</h3>
+          <ul style="list-style: none">
+            <li><a href="http://admin.sample.com:8080">http://admin.sample.com:8080</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <h3>Wildcard Subdomain</h3>
+          <ul style="list-style: none">
+            <li><a href="http://username1.sample.com:8080">http://username1.sample.com:8080</a></li>
+            <li><a href="http://username2.sample.com:8080">http://username2.sample.com:8080</a></li>
+            <li><a href="http://username3.sample.com:8080">http://username3.sample.com:8080</a></li>
+            <li>and so on...</li>
+          </ul>
+        </div>
     </div>
   </div>
 {{- end }}

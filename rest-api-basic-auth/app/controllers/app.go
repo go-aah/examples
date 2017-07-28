@@ -27,16 +27,22 @@ func (a *AppController) UserInfo() {
 	})
 }
 
-// UserInfoWithMsg method just to demo permission, nothing fancy here.
-func (a *AppController) UserInfoWithMsg() {
+// BeforeUserInfoWithMsg method to check authorization.
+// Interceptor is best spot for doing authorization.
+func (a *AppController) BeforeUserInfoWithMsg() {
 	if !a.Subject().HasRole("manager") {
 		a.Reply().Forbidden().JSON(aah.Data{
 			"code":    403,
 			"message": "you don't have permission to access this endpoint",
 		})
-		return
-	}
 
+		// Abort if subject does not have proper authorization
+		a.Abort()
+	}
+}
+
+// UserInfoWithMsg method just to demo permission, nothing fancy here.
+func (a *AppController) UserInfoWithMsg() {
 	a.Reply().Ok().JSON(models.UserInfo{
 		PrincipalValue: a.Subject().PrimaryPrincipal().Value,
 		AccessTime:     time.Now(),
