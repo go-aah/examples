@@ -23,7 +23,7 @@ func (a *AppController) Index() {
 
 // BeforeLogin method action is interceptor of Login.
 func (a *AppController) BeforeLogin() {
-	if a.Subject() != nil && a.Subject().IsAuthenticated() {
+	if a.Subject().IsAuthenticated() {
 		a.Reply().Redirect(a.ReverseURL("index"))
 		a.Abort()
 	}
@@ -36,20 +36,18 @@ func (a *AppController) Login() {
 
 // Logout method does logout currently logged in subject (aka user).
 func (a *AppController) Logout() {
-	if a.Subject() != nil {
-		a.Subject().Logout()
-	}
+	a.Subject().Logout()
 
-	// Send it to login page
+	// Send it to login page or whatever the page you have to send the user
+	// after logout
 	a.Reply().Redirect(a.ReverseURL("login"))
 }
 
 // BeforeManageUsers method is action interceptor of ManageUsers.
 func (a *AppController) BeforeManageUsers() {
-	// Checking role and permission
-	subject := a.Subject()
-	if !subject.HasAnyRole("manager", "administrator") ||
-		!subject.IsPermitted("users:manage:view") {
+	// Checking roles and permissions
+	if !a.Subject().HasAnyRole("manager", "administrator") ||
+		!a.Subject().IsPermitted("users:manage:view") {
 		a.Reply().Forbidden().HTMLf("/access-denied.html", nil)
 		a.Abort()
 	}

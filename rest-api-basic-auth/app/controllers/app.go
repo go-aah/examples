@@ -28,7 +28,7 @@ func (a *AppController) UserInfo() {
 }
 
 // BeforeUserInfoWithMsg method to check authorization.
-// Interceptor is best spot for doing authorization.
+// Interceptor is best spot for checking authorization.
 func (a *AppController) BeforeUserInfoWithMsg() {
 	if !a.Subject().HasRole("manager") {
 		a.Reply().Forbidden().JSON(aah.Data{
