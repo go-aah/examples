@@ -25,22 +25,11 @@ type (
 	}
 )
 
-// FindUserByToken returns the user information for given token.
-func FindUserByToken(token string) *User {
-	if u, found := users[token]; found {
-		uf := *u
-		return &uf
-	}
-	return nil
-}
-
 // FindUserByEmail returns the user information for given email address.
 func FindUserByEmail(email string) *User {
-	for _, u := range users {
-		if u.Email == email {
-			ui := *u
-			return &ui
-		}
+	if u, found := users[email]; found {
+		uf := *u
+		return &uf
 	}
 	return nil
 }

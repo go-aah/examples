@@ -32,7 +32,7 @@ func (fa *BasicAuthenticationProvider) GetAuthenticationInfo(authcToken *authc.A
 	// 		authcToken.Identity => username
 	// 		authcToken.Credential => passowrd
 
-	user := models.FindUserByToken(authcToken.Identity)
+	user := models.FindUserByEmail(authcToken.Identity)
 	if user == nil {
 		// No subject exists, return nil and error
 		return nil, authc.ErrSubjectNotExists
