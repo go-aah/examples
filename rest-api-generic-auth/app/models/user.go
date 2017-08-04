@@ -47,7 +47,8 @@ func FindUserByEmail(email string) *User {
 
 func init() {
 	/*
-	   Creating User Information
+		   Creating User Information
+			 Learn about permission: http://docs.aahframework.org/security-permissions.html
 	*/
 	users = make(map[string]*User)
 

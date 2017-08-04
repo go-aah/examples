@@ -5,7 +5,6 @@
 package security
 
 import (
-	"fmt"
 	"strings"
 
 	"aahframework.org/config.v0"
@@ -22,8 +21,6 @@ type AuthenticationProvider struct {
 // Init method initializes the AuthenticationProvider, this method gets called
 // during server start up.
 func (a *AuthenticationProvider) Init(cfg *config.Config) error {
-
-	fmt.Println("AuthenticationProvider init called")
 
 	// NOTE: Init is called on application startup
 

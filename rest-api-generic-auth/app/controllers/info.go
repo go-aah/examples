@@ -42,5 +42,5 @@ func (i *InfoController) ReporteeInfo() {
 		return
 	}
 
-	i.Reply().JSON(userInfo)
+	i.Reply().Ok().JSON(userInfo)
 }
