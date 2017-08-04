@@ -10,6 +10,8 @@ var _ authc.Authenticator = (*BasicAuthenticationProvider)(nil)
 // BasicAuthenticationProvider struct implements `authc.Authenticator` interface.
 type BasicAuthenticationProvider struct {
 	// for demo purpose in-memory subject (aka user) info's
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authentication
+	// Information.
 	users map[string]authc.AuthenticationInfo
 }
 
@@ -18,6 +20,8 @@ type BasicAuthenticationProvider struct {
 func (fa *BasicAuthenticationProvider) Init(cfg *config.Config) error {
 
 	// NOTE: for demo purpose I'm creating set users in the map.
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authentication
+	// Information.
 
 	fa.users = make(map[string]authc.AuthenticationInfo)
 

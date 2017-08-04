@@ -8,6 +8,9 @@ import (
 
 // FormAuthorizationProvider struct implements `authz.Authorizer` interface.
 type FormAuthorizationProvider struct {
+	// for demo purpose in-memory authorization info's
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authentication
+	// Information.
 	users map[string]authz.AuthorizationInfo
 }
 
@@ -16,7 +19,7 @@ type FormAuthorizationProvider struct {
 func (fa *FormAuthorizationProvider) Init(cfg *config.Config) error {
 
 	// NOTE: for demo purpose I'm creating set users in the map.
-	// Typically you will be using Database, API calls, LDAP, etc to get the Authentication
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authorization
 	// Information.
 
 	fa.users = make(map[string]authz.AuthorizationInfo)

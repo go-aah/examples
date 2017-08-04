@@ -10,14 +10,19 @@ var _ authz.Authorizer = (*BasicAuthorizationProvider)(nil)
 
 // BasicAuthorizationProvider struct implements `authz.Authorizer` interface.
 type BasicAuthorizationProvider struct {
+	// for demo purpose in-memory authorization info's
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authoriization
+	// Information.
 	users map[string]authz.AuthorizationInfo
 }
 
-// Init method initializes the FormAuthoriationProvider, this method gets called
+// Init method initializes the BasicAuthorizationProvider, this method gets called
 // during server start up.
 func (fa *BasicAuthorizationProvider) Init(cfg *config.Config) error {
 
 	// NOTE: for demo purpose I'm creating set users in the map.
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authorization
+	// Information.
 
 	fa.users = make(map[string]authz.AuthorizationInfo)
 

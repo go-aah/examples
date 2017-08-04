@@ -11,6 +11,8 @@ var _ authc.Authenticator = (*FormAuthenticationProvider)(nil)
 // FormAuthenticationProvider struct implements `authc.Authenticator` interface.
 type FormAuthenticationProvider struct {
 	// for demo purpose in-memory subject (aka user) info's
+	// Typically you will be using Database, API calls, LDAP, etc to get the Authentication
+	// Information.
 	users map[string]authc.AuthenticationInfo
 }
 
