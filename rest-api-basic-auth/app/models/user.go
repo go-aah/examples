@@ -8,7 +8,7 @@ package models
 // Typically you will be using Database, API calls, LDAP, etc to get the Authentication
 // Information.
 
-// Key is Token and value is User
+// Key is email and value is User
 var users map[string]*User
 
 type (

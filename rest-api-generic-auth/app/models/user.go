@@ -70,20 +70,20 @@ func init() {
 		Permissions: []string{},
 	}
 
+	users["68BEE0D2D97980E1337114713C3C26B49A45F5595F0E93FEAEAAC75ECCC4981C"] = &User{
+		FirstName: "South",
+		LastName:  "Corner",
+		Token:     "68BEE0D2D97980E1337114713C3C26B49A45F5595F0E93FEAEAAC75ECCC4981C",
+		Email:     "user3@example.com",
+		IsLocked:  true,
+	}
+
 	users["832273819090D7D036E2D529A47A554C41A37C8E060C5F7FFBC4CEBEFCDECF64"] = &User{
 		FirstName:   "Admin",
 		LastName:    "Corner",
 		Token:       "832273819090D7D036E2D529A47A554C41A37C8E060C5F7FFBC4CEBEFCDECF64",
-		Email:       "user3@example.com",
+		Email:       "admin@example.com",
 		Roles:       []string{"employee", "manager", "admin"},
 		Permissions: []string{"user:read,edit,delete:reportee"},
-	}
-
-	users["68BEE0D2D97980E1337114713C3C26B49A45F5595F0E93FEAEAAC75ECCC4981C"] = &User{
-		FirstName: "West",
-		LastName:  "Corner",
-		Token:     "68BEE0D2D97980E1337114713C3C26B49A45F5595F0E93FEAEAAC75ECCC4981C",
-		Email:     "user4@example.com",
-		IsLocked:  true,
 	}
 }
