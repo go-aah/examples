@@ -17,6 +17,6 @@ type AppController struct {
 // Index method is application root API endpoint.
 func (a *AppController) Index() {
 	a.Reply().Ok().JSON(models.Greet{
-		Message: "Welcome to aah framework - API application",
+		Message: "Welcome to aah framework - REST API Basic Auth Tutorial",
 	})
 }

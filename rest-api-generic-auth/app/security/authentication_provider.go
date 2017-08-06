@@ -32,6 +32,9 @@ func (a *AuthenticationProvider) GetAuthenticationInfo(authcToken *authc.Authent
 
 	// authcToken.Identity is complete value of "Authorization" HTTP header or
 	// configured `security.auth_schemes.generic_auth.header.identity` header value
+	//
+	// values[0] ==> Bearer
+	// values[1] ==> Token
 	values := strings.Fields(authcToken.Identity)
 	if len(values) != 2 {
 		return nil, authc.ErrAuthenticationFailed
