@@ -38,10 +38,6 @@ func (fa *BasicAuthenticationProvider) GetAuthenticationInfo(authcToken *authc.A
 		return nil, authc.ErrSubjectNotExists
 	}
 
-	if user.IsExpried || user.IsLocked {
-		return nil, authc.ErrAuthenticationFailed
-	}
-
 	// User found, now create authentication info and return to the framework
 	authcInfo := authc.NewAuthenticationInfo()
 	authcInfo.Principals = append(authcInfo.Principals,

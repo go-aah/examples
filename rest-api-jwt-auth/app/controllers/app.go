@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"aahframework.org/aah.v0"
+	"aahframework.org/essentials.v0"
 	"aahframework.org/log.v0"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/go-aah/tutorials/rest-api-jwt-auth/app/models"
@@ -29,29 +30,16 @@ func (a *AppController) Index() {
 
 // Token method validates the given username and password the generates the
 // JWT token.
-func (a *AppController) Token() {
-	// In upcoming release auto binding feature is coming :)
-	username := a.Req.FormValue("username")
-	password := a.Req.FormValue("password")
-
-	// If you want JSON payload instead of form-data submission
-	// uncomment below lines and comment above two lines
-	// var reqValues struct {
-	// 	Username string `json:"username"`
-	// 	Password string `json:"password"`
-	// }
-	// if err := json.Unmarshal(a.Req.Payload, &reqValues); err != nil {
-	// 	a.Reply().BadRequest().JSON(aah.Data{
-	// 		"message": "bad request",
-	// 	})
-	// 	return
-	// }
-	//
-	// username := reqValues.Username
-	// password := reqValues.Password
+func (a *AppController) Token(userToken *models.UserToken) {
+	if ess.IsStrEmpty(userToken.Username) || ess.IsStrEmpty(userToken.Password) {
+		a.Reply().BadRequest().JSON(aah.Data{
+			"message": "bad request",
+		})
+		return
+	}
 
 	// get the user details by username
-	user := models.FindUserByEmail(username)
+	user := models.FindUserByEmail(userToken.Username)
 	if user == nil || user.IsExpried || user.IsLocked {
 		a.Reply().Unauthorized().JSON(aah.Data{
 			"message": "invalid credentials",
@@ -60,7 +48,7 @@ func (a *AppController) Token() {
 	}
 
 	// validate password
-	if err := bcrypt.CompareHashAndPassword(user.Password, []byte(password)); err != nil {
+	if err := bcrypt.CompareHashAndPassword(user.Password, []byte(userToken.Password)); err != nil {
 		a.Reply().Unauthorized().JSON(aah.Data{
 			"message": "invalid credentials",
 		})

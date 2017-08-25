@@ -31,8 +31,7 @@ func (i *InfoController) BeforeReporteeInfo() {
 // ReporteeInfo returns the reportee info for who access of,
 // role as `manager` and permission as `user:read:reportee`.
 // Look at above Interceptor for authorization check.
-func (i *InfoController) ReporteeInfo() {
-	email := i.Req.PathValue("email")
+func (i *InfoController) ReporteeInfo(email string) {
 	userInfo := models.FindUserByEmail(email)
 
 	if userInfo == nil {
