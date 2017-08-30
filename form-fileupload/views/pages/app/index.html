@@ -1,0 +1,50 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.index.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="container">
+    <div class="row">
+      <div class="text-center welcome-msg">
+        <img src="/static/img/aah-framework-logo.png" alt="aah framework logo"/>
+        <h1>{{ .Greet.Message }}</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-offset-2 desc-box text-justify">
+          <p>Mutlipart File upload handling in <code>aah</code> framework is very easy. Design your form as you wish, choose name of the form file field and submit the form.</p>
+          <p>On server side just call method <code>Req.SaveFile</code>with form field name and destination path. That's it!
+          </p>
+        </div>
+        <div class="text-center">
+          <div id="filenameDisplay" class="filenameDisplay"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="upload-form-box">
+          <form class="" action="{{ rurl . "file_upload" }}" method="post" enctype="multipart/form-data">
+            <label class="btn btn-default">
+              Select the file to upload <input type="file" id="fileUpload" name="fileUpload" onchange="showFilename();" hidden>
+            </label>
+            <input type="hidden" id="fileName" name="fileName" value="">
+            <input type="submit" value="Upload" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-offset-2 tip-box">
+          <div class="alert alert-success">
+            <p><strong>Tip:</strong>
+              <ul>
+                <li>Tutorial upload location: <code>&lt;app-base-dir&gt;/uploads</code>.</li>
+                <li>Method <code>SaveFile</code> returns file size on successful save.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{- end }}
