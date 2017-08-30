@@ -1,0 +1,53 @@
+/*
+Minimal aah framework application template CSS.
+Based on your need choose your CSS framework.
+*/
+
+.welcome-msg {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: inherit;
+}
+
+#submit-btn {
+  margin-top:3%;
+}
+
+.user-profile-form {
+  width: 65%;
+  margin-top: 2%;
+  margin-left: 20%;
+}
+
+fieldset {
+	border: 1px solid #ddd !important;
+	margin: 0;
+	xmin-width: 0;
+  width: 100% !important;
+	padding: 10px;
+	position: relative;
+	border-radius:4px;
+	padding-left:10px!important;
+}
+
+legend {
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom: 0px;
+  border: 0;
+	width: 23%;
+	padding: 5px 5px 5px 10px;
+}
+
+.form-btn {
+  margin-top: 30px;
+}
+
+.user-profile-form .dl-horizontal dd {
+  margin-left: 200px;
+}
+
+.user-profile-form .dl-horizontal dt {
+  float: left;
+  width: 180px;
+}
