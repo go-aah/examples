@@ -6,12 +6,12 @@ package controllers
 
 import "aahframework.org/aah.v0"
 
-// App struct application controller
-type App struct {
+// AppController struct application controller
+type AppController struct {
 	*aah.Context
 }
 
 // Index method is application home page.
-func (a *App) Index() {
+func (a *AppController) Index() {
 	a.Reply().Ok()
 }
