@@ -33,7 +33,6 @@ func (i *InfoController) BeforeReporteeInfo() {
 // Look at above Interceptor for authorization check.
 func (i *InfoController) ReporteeInfo(email string) {
 	userInfo := models.FindUserByEmail(email)
-
 	if userInfo == nil {
 		i.Reply().NotFound().JSON(aah.Data{
 			"message": "repotee not found",

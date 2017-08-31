@@ -31,6 +31,7 @@ func (a *AppController) Index() {
 // Token method validates the given username and password the generates the
 // JWT token.
 func (a *AppController) Token(userToken *models.UserToken) {
+	// NOTE: Validation feature is upcoming :)
 	if ess.IsStrEmpty(userToken.Username) || ess.IsStrEmpty(userToken.Password) {
 		a.Reply().BadRequest().JSON(aah.Data{
 			"message": "bad request",
