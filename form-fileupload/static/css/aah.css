@@ -1,0 +1,48 @@
+/*
+Minimal aah framework application template CSS.
+Based on your need choose your CSS framework.
+*/
+
+.welcome-msg {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: inherit;
+}
+
+.desc-box {
+  width: 70%;
+}
+
+.upload-form-box {
+  margin-left: 40%;
+  margin-top: 2%;
+  width: 70%;
+}
+
+#filenameDisplay {
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+#fileUpload {
+  display: none !important;
+}
+
+.fileupload-success {
+  margin-left: 20%;
+  margin-top: 4%;
+  width: 60%;
+}
+
+.tip-box {
+  width: 70%;
+  margin-top: 4%;
+}
+
+.tip-box .alert-success {
+  padding-left: 10%;
+}
+
+[hidden] {
+  display: none !important;
+}

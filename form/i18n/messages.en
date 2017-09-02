@@ -1,0 +1,30 @@
+#############################################
+# i18n messages for form application
+#
+# Complete configuration reference:
+#   https://docs.aahframework.org/i18n.html
+#############################################
+
+# This structure is example purpose
+# So choose your suitable structure for your application
+
+label {
+  pages {
+    app {
+      index {
+        title = "Form Submission Tutorial - Welcome to aah framework"
+      }
+
+      user_profile {
+        title = "User Profile - Form Submission Tutorial"
+
+        form {
+          first_name = "First Name"
+          last_name = "Last Name"
+          email = "Email Address"
+          about_you = "About you"
+        }
+      }
+    }
+  }
+}

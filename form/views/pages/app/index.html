@@ -1,0 +1,41 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.index.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="container">
+    <div class="row">
+      <div class="text-center welcome-msg">
+        <img src="/static/img/aah-framework-logo.png" alt="aah framework logo"/>
+        <h1>{{ .Greet.Message }}</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-offset-4">
+          <p>This sample application demostrates following:</p>
+          <p>
+            <ul>
+              <li><a href="https://docs.aahframework.org/request-parameters-auto-bind.html" target="_blank">Auto Parse and Bind</a></li>
+              <li class="list-unstyled"><ul>
+                <li>Form Submission</li>
+                <li>Bind with Nested Struct</li>
+                <li>Input Sanitation</li>
+              </ul></li>
+              <li>If you would like to do manual parsing (this is not Sanitized values)</li>
+              <li class="list-unstyled"><ul>
+                <li>Use <code>ctx.Req.FormValue</code> and <code>ctx.Req.FormArrayValue</code></li>
+                <li>Use <code>ctx.Req.Params.Form</code> to access complete form values</li>
+              </ul></li>
+              <li>Validation is <strong>upcoming feature</strong></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div id="submit-btn" class="row text-center">
+        <p>Click here to <strong><a href="{{ rurl . "user_profile" }}" class="btn btn-success">Submit User Profile Form</a></strong></p>
+      </div>
+
+    </div>
+  </div>
+{{- end }}

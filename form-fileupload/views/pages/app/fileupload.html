@@ -1,0 +1,37 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.fileupload.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-default fileupload-success">
+        <div class="panel-body">
+          {{ if .IsError }}
+          <div class="text-center">
+            <p><strong>Error occurred while uploading file</strong></p>
+          </div>
+          {{ else }}
+          <div class="text-center">
+            <strong>File have been uploaded successfully</strong>
+          </div>
+          <br>
+          <dl class="dl-horizontal col-md-offset-2">
+            <dt>Request File Name:</dt>
+            <dd>{{ fparam . "fileName" }}</dd>
+            <dt>Saved File Name:</dt>
+            <dd>{{ .SavedFileName }}</dd>
+            <dt>File Size:</dt>
+            <dd>{{ .FileSize }} bytes</dd>
+          </dl>
+          {{ end }}
+        </div>
+      </div>
+      <div class="text-center">
+        <p><i>Tutorial upload location: <code>&lt;app-base-dir&gt;/uploads</code></i></p>
+        <br><br>
+        <a href="{{ rurl . "index" }}" class="btn btn-default">Go to Home</a>
+      </div>
+    </div>
+  </div>
+{{- end }}

@@ -1,3 +1,7 @@
+// Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
+// go-aah/tutorials source code and usage is governed by a MIT style
+// license that can be found in the LICENSE file.
+
 package controllers
 
 import (
@@ -9,13 +13,13 @@ import (
 	_ "github.com/aah-cb/minify"
 )
 
-// App struct application controller
-type App struct {
+// AppController struct application controller
+type AppController struct {
 	*aah.Context
 }
 
 // Index method is application home page.
-func (a *App) Index() {
+func (a *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
 			Message: "Welcome to aah framework - Web Application",

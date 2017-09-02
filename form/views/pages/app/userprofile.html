@@ -1,0 +1,118 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.user_profile.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="container">
+    <div class="row">
+      {{ if .DataDisplay }}
+      <div class="text-center">
+        <h2>Displaying Submitted User Profile</h2>
+      </div>
+      <div class="panel panel-default user-profile-form">
+        <div class="panel-body">
+          <dl class="dl-horizontal">
+            <dt>{{ i18n . "label.pages.app.user_profile.form.first_name" }}:</dt>
+            <dd>{{ .User.FirstName }}</dd>
+            <dt>{{ i18n . "label.pages.app.user_profile.form.last_name" }}:</dt>
+            <dd>{{ .User.LastName }}</dd>
+            <dt>{{ i18n . "label.pages.app.user_profile.form.email" }}:</dt>
+            <dd>{{ .User.Email }}</dd>
+            <dt>{{ i18n . "label.pages.app.user_profile.form.about_you" }} (sanitized):</dt>
+            <dd>{{ .User.AboutYou }}</dd>
+            <dt>{{ i18n . "label.pages.app.user_profile.form.about_you" }} (rendering it):</dt>
+            <dd>{{ .AboutYou }}</dd>
+            <fieldset class="col-md-6">
+    					<legend>Residence Address</legend>
+    					<div class="">
+                <dt>Address 1:</dt>
+                <dd>{{ .User.Residence.Address1 }}</dd>
+                <dt>Address 2:</dt>
+                <dd>{{ .User.Residence.Address2 }}</dd>
+                <dt>City:</dt>
+                <dd>{{ .User.Residence.City }}</dd>
+                <dt>Zip Code:</dt>
+                <dd>{{ .User.Residence.ZipCode }}</dd>
+    					</div>
+            </fieldset>
+          </dl>
+          <div class="clearfix"></div>
+          <div class="form-btn text-center">
+            <a href="{{ rurl . "index" }}" class="btn btn-info">Go to Home</a>
+          </div>
+        </div>
+      </div>
+      {{ else }}
+      <div class="panel panel-default user-profile-form">
+        <div class="panel-heading">
+          <h3>User Profile - Form Submission</h3>
+          <p>This example is to demostrate Form submission in aah framework. Here no validation is applied [It's an upcoming feature in aah :)]. </p>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal" method="POST" action="{{ rurl . "user_profile_submit" }}">
+            <div class="form-group">
+              <label for="first_name" class="col-sm-2 control-label">{{ i18n . "label.pages.app.user_profile.form.first_name" }}</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-sm" id="first_name" name="first_name" autofocus>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="last_name" class="col-sm-2 control-label">{{ i18n . "label.pages.app.user_profile.form.last_name" }}</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-sm" id="last_name" name="last_name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">{{ i18n . "label.pages.app.user_profile.form.email" }}</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control input-sm" id="email" name="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="about_you" class="col-sm-2 control-label">{{ i18n . "label.pages.app.user_profile.form.about_you" }}</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" rows="3" id="about_you" name="about_you" placeholder="Use HTML here, to see sanitization"></textarea>
+              </div>
+            </div>
+
+            <fieldset class="col-md-6">
+    					<legend>Residence Address</legend>
+    					<div>
+                <div class="form-group">
+                  <label for="residence.address1" class="col-sm-2 control-label">Address 1</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control input-sm" id="residence.address1" name="residence.address1">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="residence.address2" class="col-sm-2 control-label">Address 2</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control input-sm" id="residence.address2" name="residence.address2">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="residence.city" class="col-sm-2 control-label">City</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control input-sm" id="residence.city" name="residence.city">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="residence.zip_code" class="col-sm-2 control-label">Zip Code</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control input-sm" id="residence.zip_code" name="residence.zip_code">
+                  </div>
+                </div>
+    					</div>
+    				</fieldset>
+            <div class="clearfix"></div>
+            <div class="form-btn">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="{{ rurl . "index" }}" class="btn btn-info">Go to Home</a>
+            </div>
+          </form>
+        </div>
+      </div> <!-- panel end -->
+      {{ end }}
+    </div>
+  </div>
+{{- end }}

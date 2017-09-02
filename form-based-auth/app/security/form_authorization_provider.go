@@ -11,6 +11,8 @@ import (
 	"github.com/go-aah/tutorials/form-based-auth/app/models"
 )
 
+var _ authz.Authorizer = (*FormAuthorizationProvider)(nil)
+
 // FormAuthorizationProvider struct implements `authz.Authorizer` interface.
 type FormAuthorizationProvider struct {
 }
