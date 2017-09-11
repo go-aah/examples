@@ -40,6 +40,7 @@ func (a *AppController) FileUpload(fileName string) {
 
 	dstFile := filepath.Join(dstPath(), filename)
 
+	// Using aah convenient methoed to save uploaded file
 	size, err := a.Req.SaveFile("fileUpload", dstFile)
 	if err != nil {
 		a.Reply().HTML(aah.Data{
@@ -47,6 +48,10 @@ func (a *AppController) FileUpload(fileName string) {
 		})
 		return
 	}
+
+	// OR
+	// You can use traditional way using
+	// a.Req.FormFile("fileUpload")
 
 	a.Reply().HTML(aah.Data{
 		"SavedFileName": filepath.Base(dstFile),
