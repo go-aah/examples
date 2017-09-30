@@ -21,10 +21,6 @@ build {
   # Default value is `false`.
   #dep_get = true
 
-  # Log level is used for aah CLI tool logging.
-  # Default value is `info`.
-  #log_level = "info"
-
   flags = ["-i"]
 
   ldflags = ""
@@ -42,13 +38,31 @@ build {
   excludes = ["*.go", "*_test.go", ".*", "*.bak", "*.tmp", "vendor", "app", "build", "tests", "logs"]
 }
 
-# Watch configuration is for hot-reload. Configured files/directories are
-# excluded from watched file list.
-# Read more about hot-reload: https://github.com/go-aah/aah/issues/4
-watch {
-  # Note: static directory not required to monitored, since server delivers
-  # update to file on environment profile `dev`.
-  dir_excludes = [".*", "build", "static", "vendor", "tests", "logs"]
+# Logger configuration for aah CLI tool.
+log {
+  # Log level
+  # Default value is `info`.
+  #level = "info"
 
-  file_excludes = [".*", "_test.go", "form-based-auth.pid", "aah.go", "LICENSE", "README.md"]
+  # Log colored output
+  # Default value is `true`.
+  #color = false
+}
+
+# Hot-Reload is development purpose to help developer.
+# Read more about implementation here - https://github.com/go-aah/aah/issues/4
+#
+# NOTE: Do not use hot-reload feature for production purpose, it's not recommended.
+hot_reload {
+  # Default value is `true`.
+  enable = true
+
+  # Watch configuration - files/directories exclusion list.
+  watch {
+    # Note: static directory not required to be monitored, since server delivers
+    # up-to-date file on environment profile `dev`.
+    dir_excludes = [".*"]
+
+    file_excludes = [".*", "_test.go", "LICENSE", "README.md"]
+  }
 }
