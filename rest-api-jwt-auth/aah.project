@@ -21,10 +21,6 @@ build {
   # Default value is `false`.
   #dep_get = true
 
-  # Log level is used for aah CLI tool logging.
-  # Default value is `info`.
-  #log_level = "info"
-
   flags = ["-i"]
 
   ldflags = ""
@@ -40,6 +36,17 @@ build {
   # build archive. Valid exclude patterns
   # refer: https://golang.org/pkg/path/filepath/#Match
   excludes = ["*.go", "*_test.go", ".*", "*.bak", "*.tmp", "vendor", "app", "build", "tests", "logs"]
+}
+
+# Logger configuration for aah CLI tool.
+log {
+  # Log level
+  # Default value is `info`.
+  #level = "info"
+
+  # Log colored output
+  # Default value is `true`.
+  #color = false
 }
 
 # Hot-Reload is development purpose to help developer.
