@@ -12,11 +12,11 @@ label {
   pages {
     app {
       index {
-        title = "Form Submission Tutorial - Welcome to aah framework"
+        title = "Form Submission Tutorial - Welcome to aah Go web framework"
       }
 
       user_profile {
-        title = "User Profile - Form Submission Tutorial"
+        title = "User Profile - Form Submission Tutorial | aah Go web framework"
 
         form {
           first_name = "First Name"

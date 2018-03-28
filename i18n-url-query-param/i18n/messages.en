@@ -8,7 +8,7 @@
 page {
   app {
     index {
-      title = "Tutorial - i18n | aah web framework for Go"
+      title = "Tutorial - i18n | aah Go web framework for Go"
       welcome_text = "Welcome to aah framework - Web Application"
       notes = "You can achieve Internationalization and Localization by applying aah configuration and convention. Zero coding effort! That's Nice."
     }
