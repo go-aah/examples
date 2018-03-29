@@ -9,19 +9,19 @@ label {
   pages {
     app {
       index {
-        title = "Tutorial - Form Auth Home Page - aah web framework for Go"
+        title = "Tutorial - Form Auth Home Page - aah Go web framework for Go"
       }
 
       login {
-        title = "Tutorial - Form Auth Login Page - aah web framework for Go"
+        title = "Tutorial - Form Auth Login Page - aah Go web framework for Go"
       }
 
       manage_users {
-        title = "Tutorial - Manage Users - aah web framework for Go"
+        title = "Tutorial - Manage Users - aah Go web framework for Go"
       }
 
       dashboard {
-        title = "Tutorial - Admin Dashboard - aah web framework for Go"
+        title = "Tutorial - Admin Dashboard - aah Go web framework for Go"
       }
     }
   }

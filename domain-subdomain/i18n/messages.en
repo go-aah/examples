@@ -9,7 +9,7 @@ label {
   pages {
     app {
       index {
-        title = "Home - aah framework: Tutorial Domain, Subdomain and Wildcard Subdomain"
+        title = "Tutorial Domain, Subdomain and Wildcard Subdomain - Home | aah Go web framework"
       }
     }
   }

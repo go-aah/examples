@@ -9,7 +9,7 @@ label {
   pages {
     app {
       index {
-        title = "aah framework application - Home"
+        title = "Home - aah Go web framework"
       }
     }
   }
