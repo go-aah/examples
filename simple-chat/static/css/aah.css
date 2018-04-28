@@ -1,0 +1,109 @@
+/*
+Minimal aah framework application template CSS.
+Based on your need choose your CSS framework.
+*/
+
+html {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.header {
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  border-bottom: 1px #757575 solid;
+}
+
+.header h2 {
+  padding-left: 80px;
+  margin-top: -50px;
+}
+
+form {
+  background: #959595;
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+form input {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+  margin-right: .5%;
+  font-size: 14px;
+}
+
+form button {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  width: 9%;
+  background: #3857ba;
+  border: none;
+  padding: 10px;
+}
+
+.chat-messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-messages li {
+  padding: 5px 10px;
+}
+
+.chat-messages li:nth-child(odd) {
+  background: #eee;
+}
+
+.chat-status {
+  float: right;
+  padding-right: 25px;
+  font-size: 1em;
+  margin-top: -25px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.welcome-msg {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+}
+
+#showcases ul li {
+  font-size: 1.15em;
+}
