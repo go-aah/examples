@@ -1,0 +1,22 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.success.title" }} {{ session . "Realm" }} - OAuth2</title>
+{{- end }}
+
+{{ define "body" -}}
+  <form action="{{ rurl . "logout" }}" method="post" id="logoutForm"></form>
+  <script>
+    function logoutSubmit() {
+      document.getElementById("logoutForm").submit();
+    }
+  </script>
+  <div class="container">
+    <div class="row text-center welcome-msg">
+        <h2>You have successfully Logged in with {{ session . "Realm" }}</h2><br>
+        ID: {{ session . "ID" }}<br>
+        Username : {{ session . "Username" }}<br>
+        Name : {{ session . "Name" }}<br>
+        <br><br>
+        <a href="javascript:logoutSubmit();">Logout</a>
+    </div>
+  </div>
+{{- end }}
