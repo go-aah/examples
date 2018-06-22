@@ -2,7 +2,7 @@ package wildcard
 
 import (
 	"aahframework.org/aah.v0"
-	"github.com/go-aah/tutorials/domain-subdomain/app/controllers"
+	"aahframework.org/examples/domain-subdomain/app/controllers"
 )
 
 // AppController is wildcard controller.

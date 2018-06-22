@@ -37,11 +37,11 @@ func init() {
 	// aah.OnStart(db.Connect)
 	// aah.OnStart(cache.Load)
 
-	// Event: OnShutdown
+	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.
 	//
-	// aah.OnShutdown(cache.Flush)
-	// aah.OnShutdown(db.Disconnect)
+	// aah.OnPostShutdown(cache.Flush)
+	// aah.OnPostShutdown(db.Disconnect)
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Middleware's
@@ -50,7 +50,7 @@ func init() {
 	// Executed in the order they are defined. It is recommended; NOT to change
 	// the order of pre-defined aah framework middleware's.
 	//__________________________________________________________________________
-	aah.Middlewares(
+	aah.AppHTTPEngine().Middlewares(
 		aah.RouteMiddleware,
 		aah.CORSMiddleware,
 		aah.BindMiddleware,

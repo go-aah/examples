@@ -9,7 +9,7 @@ import (
 	// Registering HTML minifier for web application
 	_ "github.com/aah-cb/minify"
 
-	"github.com/go-aah/tutorials/simple-chat/app/websockets"
+	"aahframework.org/examples/simple-chat/app/websockets"
 )
 
 func init() {
@@ -39,11 +39,11 @@ func init() {
 	// aah.OnStart(db.Connect)
 	// aah.OnStart(cache.Load)
 
-	// Event: OnShutdown
+	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.
 	//
-	// aah.OnShutdown(cache.Flush)
-	// aah.OnShutdown(db.Disconnect)
+	// aah.OnPostShutdown(cache.Flush)
+	// aah.OnPostShutdown(db.Disconnect)
 
 	// HTTP Events
 	//

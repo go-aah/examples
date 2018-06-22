@@ -18,13 +18,10 @@ https://bootsnipp.com/snippets/featured/google-style-login-extended-with-html5-l
           </div>
           {{ end }}
         </div>
-        <form class="form-signin" method="post" action="{{ rurl . "login_submit" }}">
-            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <form class="form-signin" method="post" action="{{ rurl . "form_auth_login_submit__aah" }}">
+            <input type="email" id="username" name="username" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-
-            <!-- Include the requested URL in the form submission -->
-            <input type="hidden" name="_rt" value="{{ qparam . "_rt" }}">
         </form><!-- /form -->
     </div><!-- /card-container -->
 
@@ -43,22 +40,22 @@ https://bootsnipp.com/snippets/featured/google-style-login-extended-with-html5-l
           </thead>
           <tbody>
             <tr>
-              <td>user1@example.com<br><code>Roles: user, manager | Permission: users:manage:view</code></td>
+              <td>user1@aahframework.org<br><code>Roles: user, manager | Permission: users:manage:view</code></td>
               <td>welcome123</td>
               <td>Corner, East</td>
             </tr>
             <tr>
-              <td>user2@example.com (user is locked state)</td>
+              <td>user2@aahframework.org (user is locked state)</td>
               <td>welcome123</td>
               <td>Corner, West</td>
             </tr>
             <tr>
-              <td>user3@example.com<br><code>Roles: user</code></td>
+              <td>user3@aahframework.org<br><code>Roles: user</code></td>
               <td>welcome123</td>
               <td>Corner, South</td>
             </tr>
             <tr>
-              <td>admin@example.com<br><code>Roles: user, administrator | Permission: users:*</code></td>
+              <td>admin@aahframework.org<br><code>Roles: user, administrator | Permission: users:*</code></td>
               <td>welcome123</td>
               <td>Corner, Admin</td>
             </tr>

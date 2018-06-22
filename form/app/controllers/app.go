@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package controllers
@@ -9,7 +9,7 @@ import (
 	"html/template"
 
 	"aahframework.org/aah.v0"
-	"github.com/go-aah/tutorials/form/app/models"
+	"aahframework.org/examples/form/app/models"
 )
 
 // AppController struct application controller

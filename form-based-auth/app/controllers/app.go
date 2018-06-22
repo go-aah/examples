@@ -1,12 +1,12 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package controllers
 
 import (
 	"aahframework.org/aah.v0"
-	"github.com/go-aah/tutorials/form-based-auth/app/models"
+	"aahframework.org/examples/form-based-auth/app/models"
 )
 
 // AppController struct application controller
@@ -28,7 +28,7 @@ func (a *AppController) Index() {
 // BeforeLogin method action is interceptor of Login.
 func (a *AppController) BeforeLogin() {
 	if a.Subject().IsAuthenticated() {
-		a.Reply().Redirect(a.ReverseURL("index"))
+		a.Reply().Redirect(a.RouteURL("index"))
 		a.Abort()
 	}
 }
@@ -44,7 +44,7 @@ func (a *AppController) Logout() {
 
 	// Send it to login page or whatever the page you have to send the user
 	// after logout
-	a.Reply().Redirect(a.ReverseURL("login"))
+	a.Reply().Redirect(a.RouteURL("login"))
 }
 
 // BeforeManageUsers method is action interceptor of ManageUsers.

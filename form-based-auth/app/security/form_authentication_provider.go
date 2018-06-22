@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package security
@@ -7,8 +7,8 @@ package security
 import (
 	"aahframework.org/aah.v0"
 	"aahframework.org/config.v0"
+	"aahframework.org/examples/form-based-auth/app/models"
 	"aahframework.org/security.v0/authc"
-	"github.com/go-aah/tutorials/form-based-auth/app/models"
 )
 
 var _ authc.Authenticator = (*FormAuthenticationProvider)(nil)
@@ -54,15 +54,11 @@ func (fa *FormAuthenticationProvider) GetAuthenticationInfo(authcToken *authc.Au
 	return authcInfo, nil
 }
 
-func postAuthEvent(e *aah.Event) {
+func PostAuthEvent(e *aah.Event) {
 	ctx := e.Data.(*aah.Context)
 
 	// Populate session info after authentication
 	user := models.FindUserByEmail(ctx.Subject().PrimaryPrincipal().Value)
 	ctx.Session().Set("FirstName", user.FirstName)
 	ctx.Session().Set("LastName", user.LastName)
-}
-
-func init() {
-	aah.OnPostAuth(postAuthEvent)
 }

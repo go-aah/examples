@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package controllers
@@ -9,10 +9,9 @@ import (
 
 	"aahframework.org/aah.v0"
 	"aahframework.org/essentials.v0"
-	"aahframework.org/log.v0"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/go-aah/tutorials/rest-api-jwt-auth/app/models"
-	"github.com/go-aah/tutorials/rest-api-jwt-auth/app/security"
+	"aahframework.org/examples/rest-api-jwt-auth/app/models"
+	"aahframework.org/examples/rest-api-jwt-auth/app/security"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -28,10 +27,9 @@ func (a *AppController) Index() {
 	})
 }
 
-// Token method validates the given username and password the generates the
-// JWT token.
+// Token method validates the given username and password the
+// generates the JWT token.
 func (a *AppController) Token(userToken *models.UserToken) {
-	// NOTE: Validation feature is upcoming :)
 	if ess.IsStrEmpty(userToken.Username) || ess.IsStrEmpty(userToken.Password) {
 		a.Reply().BadRequest().JSON(aah.Data{
 			"message": "bad request",
@@ -56,18 +54,15 @@ func (a *AppController) Token(userToken *models.UserToken) {
 		return
 	}
 
-	// Generate JWT token
-	token := security.CreateJWTToken()
-
-	// Set claims
-	claims := token.Claims.(jwt.MapClaims)
+	// create JWT claims
+	claims := jwt.MapClaims{}
 	claims["username"] = user.Email
 	claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
-	// Generate encoded token and send it as response.
-	signedToken, err := token.SignedString(security.JWTSigningKey)
+	// Generate JWT token string
+	token, err := security.GenerateToken(claims)
 	if err != nil {
-		log.Error(err)
+		a.Log().Error(err)
 		a.Reply().InternalServerError().JSON(aah.Data{
 			"message": "Whoops! something went wrong...",
 		})
@@ -76,6 +71,7 @@ func (a *AppController) Token(userToken *models.UserToken) {
 
 	// everything went good, respond token
 	a.Reply().Ok().JSON(aah.Data{
-		"token": signedToken,
+		"token_type": "bearer",
+		"token":      token,
 	})
 }

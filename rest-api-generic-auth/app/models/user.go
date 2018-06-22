@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package models
@@ -56,7 +56,7 @@ func init() {
 		FirstName:   "East",
 		LastName:    "Corner",
 		Token:       "2F405AF4FE65632ABFD1BCD584A447902FC77556CBEDF64CDADB9A289F736609",
-		Email:       "user1@example.com",
+		Email:       "user1@aahframework.org",
 		Roles:       []string{"employee", "manager"},
 		Permissions: []string{"user:read,edit:reportee"},
 	}
@@ -65,7 +65,7 @@ func init() {
 		FirstName:   "West",
 		LastName:    "Corner",
 		Token:       "AE23F1211A28F480036BF425575FE08EE4183D3F64BF967FA39A33022F1C2E7E",
-		Email:       "user2@example.com",
+		Email:       "user2@aahframework.org",
 		Roles:       []string{"employee"},
 		Permissions: []string{},
 	}
@@ -74,7 +74,7 @@ func init() {
 		FirstName: "South",
 		LastName:  "Corner",
 		Token:     "68BEE0D2D97980E1337114713C3C26B49A45F5595F0E93FEAEAAC75ECCC4981C",
-		Email:     "user3@example.com",
+		Email:     "user3@aahframework.org",
 		IsLocked:  true,
 	}
 
@@ -82,7 +82,7 @@ func init() {
 		FirstName:   "Admin",
 		LastName:    "Corner",
 		Token:       "832273819090D7D036E2D529A47A554C41A37C8E060C5F7FFBC4CEBEFCDECF64",
-		Email:       "admin@example.com",
+		Email:       "admin@aahframework.org",
 		Roles:       []string{"employee", "manager", "admin"},
 		Permissions: []string{"user:read,edit,delete:reportee"},
 	}

@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package security
@@ -8,15 +8,14 @@ import (
 	"strings"
 
 	"aahframework.org/config.v0"
+	"aahframework.org/examples/rest-api-generic-auth/app/models"
 	"aahframework.org/security.v0/authc"
-	"github.com/go-aah/tutorials/rest-api-generic-auth/app/models"
 )
 
 var _ authc.Authenticator = (*AuthenticationProvider)(nil)
 
 // AuthenticationProvider struct implements `authc.Authenticator` interface.
-type AuthenticationProvider struct {
-}
+type AuthenticationProvider struct{}
 
 // Init method initializes the AuthenticationProvider, this method gets called
 // during server start up.

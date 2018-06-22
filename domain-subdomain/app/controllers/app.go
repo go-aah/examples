@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"aahframework.org/aah.v0"
-	"github.com/go-aah/tutorials/domain-subdomain/app/models"
+	"aahframework.org/examples/domain-subdomain/app/models"
 )
 
 // AppController struct application controller
