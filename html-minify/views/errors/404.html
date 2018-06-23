@@ -1,9 +1,0 @@
-{{ import "error_header.html" . -}}
-<div class="container">{{ with .Error }}
-  <div class="content">
-    <div class="title">
-      {{ .Code }} {{ .Message }}
-    </div>
-  </div>{{ end }}
-</div>
-{{ import "error_footer.html" . -}}
