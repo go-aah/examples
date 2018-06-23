@@ -5,6 +5,7 @@ package main
 
 import (
 	"aahframework.org/aah.v0"
+	"aahframework.org/examples/form-fileupload/app/util"
 
 	// Registering HTML minifier for web application
 	_ "github.com/aah-cb/minify"
@@ -36,6 +37,7 @@ func init() {
 	//
 	// aah.OnStart(db.Connect)
 	// aah.OnStart(cache.Load)
+	aah.OnStart(util.CreateUploadsDirectory)
 
 	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.

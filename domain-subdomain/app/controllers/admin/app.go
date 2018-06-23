@@ -7,7 +7,7 @@ type AppController struct {
 	*aah.Context
 }
 
-// Dashboard method is admin dashcard page for tutorials.
+// Dashboard method is admin dashboard page for examples.
 func (a *AppController) Dashboard() {
 
 	a.Reply().Ok().HTML(aah.Data{

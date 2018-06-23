@@ -11,11 +11,11 @@ label {
   pages {
     app {
       index {
-        title = "File Upload Tutorial - Home | aah Go web framework"
+        title = "File Upload Example - Home | aah Go web framework"
       }
 
       fileupload {
-        title = "File uploaded successfully - File Upload Tutorial | aah Go web framework"
+        title = "File uploaded successfully - File Upload Example | aah Go web framework"
       }
     }
   }

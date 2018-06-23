@@ -21,7 +21,7 @@ type AppController struct {
 func (a *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
-			Message: "Welcome to aah framework - Form Submission Tutorial",
+			Message: "Welcome to aah framework - Form Submission Example",
 		},
 	}
 

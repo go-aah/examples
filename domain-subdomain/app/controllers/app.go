@@ -14,7 +14,7 @@ type AppController struct {
 func (a *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
-			Message: "Tutorials  - Domain, Subdomain, and Wildcard Subdomain",
+			Message: "Example  - Domain, Subdomain, and Wildcard Subdomain",
 		},
 	}
 

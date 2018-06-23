@@ -10,7 +10,7 @@ type AppController struct {
 	controllers.AppController
 }
 
-// Entry method is wildcard subdomain controller for tutorials.
+// Entry method is wildcard subdomain controller for examples.
 func (a *AppController) Entry() {
 
 	a.Reply().Ok().HTML(aah.Data{

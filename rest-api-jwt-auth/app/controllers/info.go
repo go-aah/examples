@@ -5,6 +5,9 @@
 package controllers
 
 import (
+	"fmt"
+	"net/http"
+
 	"aahframework.org/aah.v0"
 	"aahframework.org/examples/rest-api-jwt-auth/app/models"
 )
@@ -16,17 +19,17 @@ type InfoController struct {
 
 // BeforeReporteeInfo Interceptor checks authority of
 // role as `manager` and permission as `user:read:reportee`.
-func (i *InfoController) BeforeReporteeInfo() {
-	if !i.Subject().HasRole("manager") ||
-		!i.Subject().IsPermitted("user:read:reportee") {
-		i.Reply().Forbidden().JSON(aah.Data{
-			"message": "access denied",
-		})
+// func (i *InfoController) BeforeReporteeInfo() {
+// 	if !i.Subject().HasRole("manager") ||
+// 		!i.Subject().IsPermitted("user:read:reportee") {
+// 		i.Reply().Forbidden().JSON(aah.Data{
+// 			"message": "access denied",
+// 		})
 
-		// abort the flow
-		i.Abort()
-	}
-}
+// 		// abort the flow
+// 		i.Abort()
+// 	}
+// }
 
 // ReporteeInfo returns the reportee info for who access of,
 // role as `manager` and permission as `user:read:reportee`.
@@ -41,4 +44,17 @@ func (i *InfoController) ReporteeInfo(email string) {
 	}
 
 	i.Reply().Ok().JSON(userInfo)
+}
+
+// HandleError method invoked by aah error handling flow
+// Doc: https://aahframework.org/error-handling.html
+func (i *InfoController) HandleError(err *aah.Error) bool {
+	fmt.Println("err", err)
+	switch err.Code {
+	case http.StatusForbidden:
+		i.Reply().Forbidden().JSON(aah.Data{
+			"message": "access denied",
+		})
+	}
+	return true
 }

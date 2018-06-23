@@ -11,8 +11,8 @@ import (
 
 	"aahframework.org/aah.v0"
 	"aahframework.org/essentials.v0"
-	"aahframework.org/log.v0"
 	"aahframework.org/examples/form-fileupload/app/models"
+	"aahframework.org/examples/form-fileupload/app/util"
 )
 
 // AppController struct application controller
@@ -24,7 +24,7 @@ type AppController struct {
 func (a *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
-			Message: "Welcome to aah framework - File Upload Tutorial",
+			Message: "Welcome to aah framework - File Upload Example",
 		},
 	}
 
@@ -38,7 +38,7 @@ func (a *AppController) FileUpload(fileName string) {
 		time.Now().Format("2006-01-02-15-04-05"),
 		filepath.Ext(fileName))
 
-	dstFile := filepath.Join(dstPath(), filename)
+	dstFile := filepath.Join(util.UploadsPath(), filename)
 
 	// Using aah convenient methoed to save uploaded file
 	size, err := a.Req.SaveFile("fileUpload", dstFile)
@@ -49,29 +49,8 @@ func (a *AppController) FileUpload(fileName string) {
 		return
 	}
 
-	// OR
-	// You can use traditional way using
-	// a.Req.FormFile("fileUpload")
-
 	a.Reply().HTML(aah.Data{
 		"SavedFileName": filepath.Base(dstFile),
 		"FileSize":      size,
 	})
-}
-
-// Helper methods to create upload directory
-// and register aah server on start event
-
-func dstPath() string {
-	return filepath.Join(aah.AppBaseDir(), "uploads")
-}
-
-func createDirectory(_ *aah.Event) {
-	if err := ess.MkDirAll(dstPath(), 0766); err != nil {
-		log.Error(err)
-	}
-}
-
-func init() {
-	aah.OnStart(createDirectory)
 }

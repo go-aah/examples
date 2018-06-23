@@ -61,7 +61,7 @@ hot_reload {
   watch {
     # Note: static directory not required to be monitored, since server delivers
     # up-to-date file on environment profile `dev`.
-    dir_excludes = [".*"]
+    dir_excludes = [".*", "uploads"]
 
     file_excludes = [".*", "_test.go", "LICENSE", "README.md"]
   }
