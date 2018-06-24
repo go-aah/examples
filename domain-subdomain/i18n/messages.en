@@ -1,9 +1,8 @@
-#############################################
+# ---------------------------------------------------------------------------
 # i18n messages for domain-subdomain application
 #
-# Complete configuration reference:
-#   https://docs.aahframework.org/i18n.html
-#############################################
+# Doc: https://docs.aahframework.org/i18n.html
+# ---------------------------------------------------------------------------
 
 label {
   pages {
