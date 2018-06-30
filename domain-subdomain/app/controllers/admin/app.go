@@ -8,10 +8,10 @@ type AppController struct {
 }
 
 // Dashboard method is admin dashboard page for examples.
-func (a *AppController) Dashboard() {
+func (c *AppController) Dashboard() {
 
-	a.Reply().Ok().HTML(aah.Data{
-		"Subdomain": a.Subdomain(),
+	c.Reply().Ok().HTML(aah.Data{
+		"Subdomain": c.Subdomain(),
 		"Message":   "I'm in admin dashboard page",
 	})
 

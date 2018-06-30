@@ -12,6 +12,6 @@ type AppController struct {
 }
 
 // Index method is application home page.
-func (a *AppController) Index() {
-	a.Reply().Ok()
+func (c *AppController) Index() {
+	c.Reply().Ok()
 }

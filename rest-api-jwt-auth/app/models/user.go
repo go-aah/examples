@@ -57,12 +57,11 @@ func init() {
 	}
 
 	users["user2@aahframework.org"] = &User{
-		FirstName:   "West",
-		LastName:    "Corner",
-		Password:    []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
-		Email:       "user2@aahframework.org",
-		Roles:       []string{"employee"},
-		Permissions: []string{},
+		FirstName: "West",
+		LastName:  "Corner",
+		Password:  []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
+		Email:     "user2@aahframework.org",
+		Roles:     []string{"employee"},
 	}
 
 	users["user3@aahframework.org"] = &User{
@@ -70,6 +69,7 @@ func init() {
 		LastName:  "Corner",
 		Password:  []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
 		Email:     "user3@aahframework.org",
+		Roles:     []string{"employee"},
 		IsLocked:  true,
 	}
 

@@ -12,11 +12,11 @@ type AppController struct {
 }
 
 // Index method is to redirect root directory to locaized page.
-func (a *AppController) Index() {
-	a.Reply().Redirect(a.RouteURL("index_lang", "en"))
+func (c *AppController) Index() {
+	c.Reply().Redirect(c.RouteURL("index_lang", "en"))
 }
 
 // IndexLang method is application home page.
-func (a *AppController) IndexLang() {
-	a.Reply().Ok().HTMLf("index.html", nil)
+func (c *AppController) IndexLang() {
+	c.Reply().Ok().HTMLf("index.html", nil)
 }

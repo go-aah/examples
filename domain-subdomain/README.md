@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://cdn.aahframework.org/assets/img/aah-logo-64x64.png" />
-  <h2 align="center">Example of Domain, Subdomain and Wildcard Subdomain</h2>
+  <h2 align="center">Example - Domain, Subdomain and Wildcard Subdomain</h2>
 </p>
 
 This example application gives an idea how to use Domain, Subdomain and Wildcard Subdomain with aah framework. Reference to [Routes Config](https://docs.aahframework.org/routing.html).
@@ -15,7 +15,7 @@ git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/ex
 
 ### Configuring local DNS mapping
 
-First we have to configure your hosts file. Purpose is do local DNS mapping for `sample.com`. This step is not applicable for production, typically these settings happens in your domain DNS manager. Learn more about [Wildcard DNS - wikipedia](https://en.wikipedia.org/wiki/Wildcard_DNS_record)
+First we have to configure `hosts` file. Purpose is do local DNS mapping for `sample.com`. This step is not applicable for production, typically these settings happens in your domain DNS manager. Learn more about [Wildcard DNS - wikipedia](https://en.wikipedia.org/wiki/Wildcard_DNS_record)
 
 This [rackspace article](https://support.rackspace.com/how-to/modify-your-hosts-file/) covers the steps to modify-your-hosts-file for Mac, Linux and Windows.
 
@@ -29,7 +29,7 @@ This [rackspace article](https://support.rackspace.com/how-to/modify-your-hosts-
 aah r -i aahframework.org/examples/domain-subdomain
 ```
 
-#### Now visit these URL's in your browser :)
+### Now visit this URLs
 
   * http://sample.com:8080
   * http://admin.sample.com:8080

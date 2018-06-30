@@ -12,22 +12,22 @@ type AppController struct {
 }
 
 // Index method is application home page.
-func (a *AppController) Index() {
+func (c *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
 			Message: "aah framework - OAuth2 Social Login",
 		},
 	}
 
-	a.Reply().Ok().HTML(data)
+	c.Reply().Ok().HTML(data)
 }
 
 // Success method is to display successful sign-in.
-func (a *AppController) Success() {
+func (c *AppController) Success() {
 }
 
 // Logout method does logout subject.
-func (a *AppController) Logout() {
-	a.Subject().Logout()
-	a.Reply().Redirect(a.RouteURL("index"))
+func (c *AppController) Logout() {
+	c.Subject().Logout()
+	c.Reply().Redirect(c.RouteURL("index"))
 }

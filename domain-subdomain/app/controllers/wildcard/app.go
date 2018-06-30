@@ -11,10 +11,10 @@ type AppController struct {
 }
 
 // Entry method is wildcard subdomain controller for examples.
-func (a *AppController) Entry() {
+func (c *AppController) Entry() {
 
-	a.Reply().Ok().HTML(aah.Data{
-		"Subdomain": a.Subdomain(),
+	c.Reply().Ok().HTML(aah.Data{
+		"Subdomain": c.Subdomain(),
 		"Message":   "I'm in wildcard app controller page",
 	})
 

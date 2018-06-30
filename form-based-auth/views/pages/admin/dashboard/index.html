@@ -25,7 +25,7 @@
             {{ if (ispermitted . "users:manage:view") (hasanyrole . "manager" "administrator") }}
             <tr>
               <td><a href="{{ rurl . "manage_users" }}">Manage Users</a></td>
-              <td>Shown to users who have permission "users:manage:view"</td>
+              <td>Shown to users who have either "manager" or "administrator" role and permission "users:manage:view"</td>
             </tr>
             {{ end }}
             <tr>

@@ -17,20 +17,20 @@ type PostController struct {
 }
 
 // List method returns all the posts available.
-func (p *PostController) List() {
+func (c *PostController) List() {
 	posts := models.AllPosts()
-	p.Log().Infof("%v posts found", len(posts))
-	p.Reply().JSON(aah.Data{
+	c.Log().Infof("%v posts found", len(posts))
+	c.Reply().JSON(aah.Data{
 		"posts": posts,
 	})
 }
 
 // Create method to create a post via JSON.
-func (p *PostController) Create(post *models.Post) {
-	p.Log().Infof("Post Info: %+v", *post)
+func (c *PostController) Create(post *models.Post) {
+	c.Log().Infof("Post Info: %+v", *post)
 	id := models.CreatePost(post)
-	newResourceURL := fmt.Sprintf("%s:%v", p.Req.Scheme, p.RouteURL("retrieve_post", id))
-	p.Reply().Created().
+	newResourceURL := fmt.Sprintf("%s:%v", c.Req.Scheme, c.RouteURL("retrieve_post", id))
+	c.Reply().Created().
 		Header("Location", newResourceURL).
 		JSON(aah.Data{
 			"id": id,
@@ -38,48 +38,48 @@ func (p *PostController) Create(post *models.Post) {
 }
 
 // Retrieve method retunrs single post details for given post ID.
-func (p *PostController) Retrieve(id int64) {
-	p.Log().Infof("Retrieving post, ID: %v", id)
+func (c *PostController) Retrieve(id int64) {
+	c.Log().Infof("Retrieving post, ID: %v", id)
 	post, err := models.GetPost(id)
 	if err != nil {
-		p.Log().Errorf("Post ID %v, %v", id, err)
-		p.Reply().NotFound().JSON(aah.Data{
+		c.Log().Errorf("Post ID %v, %v", id, err)
+		c.Reply().NotFound().JSON(aah.Data{
 			"error": err.Error(),
 		})
 		return
 	}
 
-	p.Reply().JSON(models.ToPostAlias(post))
+	c.Reply().JSON(models.ToPostAlias(post))
 }
 
 // Update method updates the post with given content.
-func (p *PostController) Update(id int64, post *models.Post) {
-	p.Log().Infof("Updating post: %v", id)
+func (c *PostController) Update(id int64, post *models.Post) {
+	c.Log().Infof("Updating post: %v", id)
 	if post.ID == 0 {
 		post.ID = id
 	}
 
 	if err := models.UpdatePost(post); err != nil {
-		p.Log().Errorf("Post ID %v, %v", id, err)
-		p.Reply().NotFound().JSON(aah.Data{
+		c.Log().Errorf("Post ID %v, %v", id, err)
+		c.Reply().NotFound().JSON(aah.Data{
 			"error": err.Error(),
 		})
 		return
 	}
 
-	p.Reply().NoContent()
+	c.Reply().NoContent()
 }
 
 // Delete method deletes the post of given post ID.
-func (p *PostController) Delete(id int64) {
-	p.Log().Infof("Deleting post, ID: %v", id)
+func (c *PostController) Delete(id int64) {
+	c.Log().Infof("Deleting post, ID: %v", id)
 	if err := models.DeletePost(id); err != nil {
-		p.Log().Errorf("Post ID %v, %v", id, err)
-		p.Reply().NotFound().JSON(aah.Data{
+		c.Log().Errorf("Post ID %v, %v", id, err)
+		c.Reply().NotFound().JSON(aah.Data{
 			"error": err.Error(),
 		})
 		return
 	}
 
-	p.Reply().NoContent()
+	c.Reply().NoContent()
 }

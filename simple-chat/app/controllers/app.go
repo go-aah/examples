@@ -10,11 +10,11 @@ type AppController struct {
 }
 
 // Index method is application home page.
-func (a *AppController) Index() {
+func (c *AppController) Index() {
 
 }
 
 // SimpleChatDemo method is show a chat page.
-func (a *AppController) SimpleChatDemo() {
+func (c *AppController) SimpleChatDemo() {
 
 }

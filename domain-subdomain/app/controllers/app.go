@@ -11,12 +11,12 @@ type AppController struct {
 }
 
 // Index method is application home page.
-func (a *AppController) Index() {
+func (c *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
 			Message: "Example  - Domain, Subdomain, and Wildcard Subdomain",
 		},
 	}
 
-	a.Reply().Ok().HTML(data)
+	c.Reply().Ok().HTML(data)
 }
