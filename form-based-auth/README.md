@@ -5,7 +5,7 @@
 
 This example demonstrates Form based Auth with aah framework. That includes Authentication, Route Authorization via routes config, Access permissions on View files, Session access on View files.
 
-Learn more about [Security design](https://docs.aahframework.org/security-design.html), [Authentication](https://docs.aahframework.org/authentication.html) and [Authorization](https://docs.aahframework.org/authorization.html).
+Learn more about [Security design](https://docs.aahframework.org/security-design.html), [Authentication](https://docs.aahframework.org/authentication.html), [Authorization](https://docs.aahframework.org/authorization.html) and [Form Auth scheme](https://docs.aahframework.org/auth-schemes/form.html).
 
 ## How to get the aah examples?
 
