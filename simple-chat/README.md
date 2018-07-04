@@ -3,7 +3,7 @@
   <h2 align="center">Example - Simple Chat</h2>
 </p>
 
-This example illustrates WebSocket implementation with aah framework. It does reading and replying text with WS client. aah WebSocket also covers the basis of subscribing to WebSocket aah server events.
+This example shows WebSocket implementation with aah framework. It does reading and replying text with WS client. aah WebSocket also covers the basis of subscribing to WebSocket aah server events.
 
 Learn more about [aah WebSocket](https://docs.aahframework.org/websocket.html)
 
