@@ -3,25 +3,25 @@
   <h2 align="center">Example - REST API Services</h2>
 </p>
 
-This example demonstrates buliding REST API services with aah framework. It gives an idea about aah features and API capabilities.
+This example demonstrates buliding REST API services with aah framework. It gives an overview of aah features and API capabilities.
 
 Learn more about [REST API versioning strategies](https://docs.aahframework.org/rest-api-versioning.html) and [Auto parse and Bind](https://docs.aahframework.org/request-parameters-auto-bind.html).
 
-## How to get the aah examples?
+### Get aah examples
 
 ```bash
 git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
 ```
 
-## How to run this example?
+### Run this example
 
 ```bash
 aah r -i aahframework.org/examples/rest-api
 ```
 
-## Use your favorite REST client to make a request
+## Use a preferred REST client to make request
 
-Example application has endpoints with in-memory blog post implementation. Observe the application logs to learn more.
+Example application has endpoints with in-memory blog post implementation. Observe application logs to learn more.
 
 ```
 GET     /              - Welcome message
