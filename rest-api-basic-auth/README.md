@@ -3,30 +3,30 @@
   <h2 align="center">Example - REST API Basic Auth</h2>
 </p>
 
-This example demonstrates REST API Basic Auth with aah framework. That includes Authentication and Route Authorization via routes config. 
+This example demonstrates REST API Basic Auth with aah framework. aah REST API Basic Auth includes authentication and route authorization via routes config. 
 
 aah supports basic auth mechanism in two ways, choose per use case -
 
 Realm | Description
 ----- | -----------
-File | When you know set of pre-defiend subjects (aka users), roles and permissions (roles and permissions values are optional though)
+File | When you know a set of pre-defiend subjects (aka users), roles and permissions (roles and permissions values are optional though)
 Dynamic | Subject information lies in Data Source (DB, API provider, etc). Implementing interfaces `authc.Authenticator` and `authz.Authorizer`
 
 Learn more about [Security design](https://docs.aahframework.org/security-design.html), [Authentication](https://docs.aahframework.org/authentication.html) and [Authorization](https://docs.aahframework.org/authorization.html).
 
-## How to get the aah examples?
+### Get aah exaamples
 
 ```bash
 git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
 ```
 
-## How to run this example?
+### Run this example
 
 ```bash
 aah r -i aahframework.org/examples/rest-api-basic-auth
 ```
 
-## Use your favorite REST client to make a request
+### Use a preferred REST client to make a request
 
 **Demo User Credentials**
 
@@ -79,4 +79,4 @@ Resposne:
 }
 ```
 
-Now, try yourself with various combinations with above demo credentials.
+Now, try various combinations with the above demo credentials.

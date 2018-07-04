@@ -3,31 +3,31 @@
   <h2 align="center">Example - i18n URL Path Parameter</h2>
 </p>
 
-This example demonstrates i18n - Internationalization with aah framework using **URL Path Parameter**. It is by applying aah configuration and convention. Zero coding effort on this aspect!
+This example demonstrates i18n - Internationalization with aah framework using **URL Path Parameter**. By applying aah configuration and convention, zero coding effort can be achieved on this aspect.
 
-Application has URL pattern as 
+Application has below route URL pattern -
 
 ```
-/page/{language}/index.html
+/page/:language/index.html
 ```
 
-Learn more on how i18n works in aah - https://docs.aahframework.org/i18n.html.
+Learn how i18n works in aah - https://docs.aahframework.org/i18n.html.
 
-## How to get the aah examples?
+### Get aah examples
 
 ```bash
 git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
 ```
 
-## How to run this example?
+### Run this example
 
 ```bash
 aah r -i aahframework.org/examples/i18n-url-path-param
 ```
 
-### Now visit this URL
+### Visit this URL
 
-Go to home page click on the language links to see i18n in action.
+Go to home page, click on language links to see i18n in action.
 
   * Home page : http://localhost:8080
 
