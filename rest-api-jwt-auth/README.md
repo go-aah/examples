@@ -3,25 +3,25 @@
   <h2 align="center">Example - REST API JWT Auth</h2>
 </p>
 
-This example demonstrates REST API JWT Auth with aah framework. That includes Authentication and Route Authorization via routes config.
+This example demonstrates REST API JWT Auth with aah framework. aah REST API JWT Auth includes authentication and route authorization via routes config.
 
-Generic Auth could be customized in so many ways. This application implements JSON Web Token (JWT) using Generic auth scheme.
+Generic Auth can be customized in so many ways. This application implements JSON Web Token (JWT) using Generic auth scheme.
 
 Learn more about [Security design](https://docs.aahframework.org/security-design.html), [Authentication](https://docs.aahframework.org/authentication.html) and [Authorization](https://docs.aahframework.org/authorization.html).
 
-## How to get the aah examples?
+### Get aah examples
 
 ```bash
 git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
 ```
 
-## How to run this example?
+### Run this example
 
 ```bash
 aah r -i aahframework.org/examples/rest-api-jwt-auth
 ```
 
-## Use your favorite REST client to make a request
+## Use a preferred REST client to make a request
 
 **Demo User Credentials**
 
@@ -80,7 +80,7 @@ Returns access token for valid credentials.
 
 Send GET request to http://localhost:8080/v1/reportee/user2@aahframework.org
 
-Pass access token via HTTP header `Authorization: Bearer <access-token>`
+Passes access token via HTTP header `Authorization: Bearer <access-token>`
 
 Resposne:
 
@@ -97,4 +97,4 @@ Resposne:
 }
 ```
 
-Now, try yourself with various combinations with above demo credentials.
+Now, try various combinations with the above demo credentials.
