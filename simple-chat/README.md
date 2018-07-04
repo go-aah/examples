@@ -23,4 +23,4 @@ aah r -i aahframework.org/examples/simple-chat
 
   * http://localhost:8080
 
-In the application home page, click on button "Let's chat".
+Go to application home page, click the button "Let's chat".
