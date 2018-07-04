@@ -27,7 +27,7 @@ This [rackspace article](https://support.rackspace.com/how-to/modify-your-hosts-
 aah r -i aahframework.org/examples/domain-subdomain
 ```
 
-### Visit this URLs
+### Visit these URLs
 
   * http://sample.com:8080
   * http://admin.sample.com:8080
