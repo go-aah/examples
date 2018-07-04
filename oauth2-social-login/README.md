@@ -7,17 +7,17 @@ This example demonstrates OAuth2 3-legged Flow implementation with aah framework
 
 Learn more about [OAuth2 Auth scheme](https://docs.aahframework.org/auth-schemes/oauth2.html)
 
-## How to get the aah examples?
+### Get aah examples
 
 ```bash
 git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
 ```
 
-## How to run this example?
+### Run this example
 
 **Step 1:**
 
-First, you have to configure the OAuth2 provider(s) Client ID and Secret in the `security.conf`. If you want to try only one provider, just configure them alone.
+First, configure the OAuth2 provider(s) Client ID and Secret in the `security.conf`. Initially, to try with one provider, simply configure that one alone.
 
 **Step 2:**
 
@@ -25,8 +25,8 @@ First, you have to configure the OAuth2 provider(s) Client ID and Secret in the 
 aah r -i aahframework.org/examples/oauth2-social-login
 ```
 
-### Now visit this URL
+### Visit this URL
 
   * http://localhost:8080
 
-On application home page click on the provider icon :smile:.
+In application home page, click on the provider icon :smile:.
