@@ -19,7 +19,7 @@ git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/ex
 aah r -i aahframework.org/examples/rest-api
 ```
 
-## Use a preferred REST client to make request
+### Use a preferred REST client to make a request
 
 Example application has endpoints with in-memory blog post implementation. Observe application logs to learn more.
 
