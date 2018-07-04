@@ -11,7 +11,7 @@ Application has below route URL pattern -
 /page/:language/index.html
 ```
 
-Learn more on how i18n works in aah - https://docs.aahframework.org/i18n.html.
+Learn how i18n works in aah - https://docs.aahframework.org/i18n.html.
 
 ### Get aah examples
 
