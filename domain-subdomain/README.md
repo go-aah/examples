@@ -3,7 +3,7 @@
   <h2 align="center">Example - Domain, Subdomain and Wildcard Subdomain</h2>
 </p>
 
-This sample application gives insights on how to use domains, subdomains and wildcard subdomains with aah framework. Reference to [Routes Config](https://docs.aahframework.org/routing.html).
+This example application gives insights on how to use domains, subdomains and wildcard subdomains with aah framework. Reference to [Routes Config](https://docs.aahframework.org/routing.html).
 
 ### Get aah examples
 
