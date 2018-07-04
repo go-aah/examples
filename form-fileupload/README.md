@@ -3,26 +3,26 @@
   <h2 align="center">Example - Form File Upload</h2>
 </p>
 
-This example demonstrates Form File Upload with aah framework. It is easy to handle File uploads in aah, typically calling `Req.SaveFile` with form field name and destination path. Method returns file size on successful save.
+This example illustrates aah form file upload. It is easy to handle file uploads in aah. It works by calling (method) `Req.SaveFile` with form field name and destination path. The method returns file size on successful save.
 
 ```go
 fileSize, err := Req.SaveFile("userProfileImage", "/Users/jeeva/user-profile-uploads")
 ```
 
-## How to get the aah examples?
+### Get aah examples
 
 ```bash
 git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
 ```
 
-## How to run this example?
+### Run this example
 
 ```bash
 aah r -i aahframework.org/examples/form-fileupload
 ```
 
-### Now visit this URL
+### Visit this URL
 
   * http://localhost:8080
 
-Home page includes details about the implemented functionality and button to choose file and upload. It is self explanatory.
+Home page includes the details of implemented functionality and has a button to choose file and upload. It is self explanatory.
