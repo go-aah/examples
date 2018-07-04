@@ -5,13 +5,13 @@
 
 This example demonstrates i18n - Internationalization with aah framework using **URL Query Parameter**. By applying aah configuration and convention, zero coding effort can be achieved on this aspect.
 
-The application has URL pattern as 
+The application has below route URL pattern -
 
 ```
 /?lang={language}
 ```
 
-Learn more on how i18n works in aah - https://docs.aahframework.org/i18n.html.
+Learn how i18n works in aah - https://docs.aahframework.org/i18n.html.
 
 ### Get aah examples
 
