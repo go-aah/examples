@@ -26,7 +26,7 @@ git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/ex
 aah r -i aahframework.org/examples/rest-api-basic-auth
 ```
 
-## Use a preferred REST client to make a request
+### Use a preferred REST client to make a request
 
 **Demo User Credentials**
 
