@@ -80,7 +80,7 @@ Returns access token for valid credentials.
 
 Send GET request to http://localhost:8080/v1/reportee/user2@aahframework.org
 
-Passes access token via HTTP header `Authorization: Bearer <access-token>`
+Pass access token via HTTP header `Authorization: Bearer <access-token>`
 
 Resposne:
 
