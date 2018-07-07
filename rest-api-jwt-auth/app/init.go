@@ -5,6 +5,7 @@ package main
 
 import (
 	"aahframework.org/aah.v0"
+	"aahframework.org/examples/rest-api-jwt-auth/app/security"
 )
 
 func init() {
@@ -33,12 +34,13 @@ func init() {
 	//
 	// aah.OnStart(db.Connect)
 	// aah.OnStart(cache.Load)
+	aah.OnStart(security.LoadJWTconfig)
 
-	// Event: OnShutdown
+	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.
 	//
-	// aah.OnShutdown(cache.Flush)
-	// aah.OnShutdown(db.Disconnect)
+	// aah.OnPostShutdown(cache.Flush)
+	// aah.OnPostShutdown(db.Disconnect)
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Middleware's
@@ -47,7 +49,7 @@ func init() {
 	// Executed in the order they are defined. It is recommended; NOT to change
 	// the order of pre-defined aah framework middleware's.
 	//__________________________________________________________________________
-	aah.Middlewares(
+	aah.AppHTTPEngine().Middlewares(
 		aah.RouteMiddleware,
 		aah.CORSMiddleware,
 		aah.BindMiddleware,

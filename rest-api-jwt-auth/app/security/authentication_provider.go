@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package security
@@ -17,8 +17,7 @@ import (
 var _ authc.Authenticator = (*AuthenticationProvider)(nil)
 
 // AuthenticationProvider struct implements `authc.Authenticator` interface.
-type AuthenticationProvider struct {
-}
+type AuthenticationProvider struct{}
 
 //‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 // AuthenticationProvider methods
@@ -27,9 +26,7 @@ type AuthenticationProvider struct {
 // Init method initializes the AuthenticationProvider, this method gets called
 // during server start up.
 func (a *AuthenticationProvider) Init(cfg *config.Config) error {
-
 	// NOTE: Init is called on application startup
-
 	return nil
 }
 
@@ -60,9 +57,10 @@ func (a *AuthenticationProvider) GetAuthenticationInfo(authcToken *authc.Authent
 	authcInfo := authc.NewAuthenticationInfo()
 	authcInfo.Principals = append(authcInfo.Principals,
 		&authc.Principal{
+			Realm:     "inmemory",
+			Claim:     "Username",
 			Value:     claims["username"].(string),
 			IsPrimary: true,
-			Realm:     "inmemory",
 		})
 
 	return authcInfo, nil

@@ -1,14 +1,13 @@
-#############################################
-# i18n messages for i18n application
+# ---------------------------------------------------------------------------
+# i18n messages for i18n-url-path-param application
 #
-# Complete configuration reference:
-#   https://docs.aahframework.org/i18n.html
-#############################################
+# Doc: https://docs.aahframework.org/i18n.html
+# ---------------------------------------------------------------------------
 
 page {
   app {
     index {
-      title = "Tutorial - i18n | AAH el framework web para ir"
+      title = "Example - i18n | AAH el framework web para ir"
       welcome_text = "Bienvenido a aah marco - aplicación Web"
       notes = "Puede lograr la internacionalización y la localización aplicando una configuración y una convención de aah. Cero esfuerzo de codificación! Eso es bueno."
     }

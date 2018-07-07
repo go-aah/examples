@@ -1,11 +1,11 @@
 {{ define "title" -}}
-<title>Admin Dashboard - aah framework: Tutorial Domain, Subdomain and Wildcard Subdomain</title>
+<title>Admin Dashboard - aah framework: Examples of Domain, Subdomain and Wildcard Subdomain</title>
 {{- end }}
 
 {{ define "body" -}}
   <div class="container">
     <div class="row text-center welcome-msg">
-      <h1>Tutorials  - Domain, Subdomain, and Wildcard Subdomain</h1>
+      <h1>Example - Domain, Subdomain, and Wildcard Subdomain</h1>
       <div class="row">
         <strong>Host/Domain:</strong> {{ .Host }}<br>
         <strong>Subdomain:</strong> {{ .Subdomain }}<br>
@@ -13,7 +13,7 @@
       </div>
 
       <div class="tm-25">
-        <a href="http://sample.com:8080">Home</a>
+        <a href="{{ rurl . "index" }}">Home</a>
       </div>
     </div>
   </div>

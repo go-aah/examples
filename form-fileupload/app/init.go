@@ -5,6 +5,7 @@ package main
 
 import (
 	"aahframework.org/aah.v0"
+	"aahframework.org/examples/form-fileupload/app/util"
 
 	// Registering HTML minifier for web application
 	_ "github.com/aah-cb/minify"
@@ -36,12 +37,13 @@ func init() {
 	//
 	// aah.OnStart(db.Connect)
 	// aah.OnStart(cache.Load)
+	aah.OnStart(util.CreateUploadsDirectory)
 
-	// Event: OnShutdown
+	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.
 	//
-	// aah.OnShutdown(cache.Flush)
-	// aah.OnShutdown(db.Disconnect)
+	// aah.OnPostShutdown(cache.Flush)
+	// aah.OnPostShutdown(db.Disconnect)
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Middleware's
@@ -50,7 +52,7 @@ func init() {
 	// Executed in the order they are defined. It is recommended; NOT to change
 	// the order of pre-defined aah framework middleware's.
 	//__________________________________________________________________________
-	aah.Middlewares(
+	aah.AppHTTPEngine().Middlewares(
 		aah.RouteMiddleware,
 		aah.CORSMiddleware,
 		aah.BindMiddleware,

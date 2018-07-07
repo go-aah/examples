@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package controllers
@@ -12,11 +12,11 @@ type AppController struct {
 }
 
 // Index method is to redirect root directory to locaized page.
-func (a *AppController) Index() {
-	a.Reply().Redirect(a.ReverseURL("index_lang", "en"))
+func (c *AppController) Index() {
+	c.Reply().Redirect(c.RouteURL("index_lang", "en"))
 }
 
 // IndexLang method is application home page.
-func (a *AppController) IndexLang() {
-	a.Reply().Ok().HTMLf("index.html", nil)
+func (c *AppController) IndexLang() {
+	c.Reply().Ok().HTMLf("index.html", nil)
 }

@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package models
@@ -47,37 +47,37 @@ func init() {
 	*/
 	users = make(map[string]*User)
 
-	users["user1@example.com"] = &User{
+	users["user1@aahframework.org"] = &User{
 		FirstName:   "East",
 		LastName:    "Corner",
 		Password:    []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
-		Email:       "user1@example.com",
+		Email:       "user1@aahframework.org",
 		Roles:       []string{"employee", "manager"},
 		Permissions: []string{"user:read,edit:reportee"},
 	}
 
-	users["user2@example.com"] = &User{
-		FirstName:   "West",
-		LastName:    "Corner",
-		Password:    []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
-		Email:       "user2@example.com",
-		Roles:       []string{"employee"},
-		Permissions: []string{},
+	users["user2@aahframework.org"] = &User{
+		FirstName: "West",
+		LastName:  "Corner",
+		Password:  []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
+		Email:     "user2@aahframework.org",
+		Roles:     []string{"employee"},
 	}
 
-	users["user3@example.com"] = &User{
+	users["user3@aahframework.org"] = &User{
 		FirstName: "South",
 		LastName:  "Corner",
 		Password:  []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
-		Email:     "user3@example.com",
+		Email:     "user3@aahframework.org",
+		Roles:     []string{"employee"},
 		IsLocked:  true,
 	}
 
-	users["admin@example.com"] = &User{
+	users["admin@aahframework.org"] = &User{
 		FirstName:   "Admin",
 		LastName:    "Corner",
 		Password:    []byte("$2y$10$2A4GsJ6SmLAMvDe8XmTam.MSkKojdobBVJfIU7GiyoM.lWt.XV3H6"), // welcome123
-		Email:       "admin@example.com",
+		Email:       "admin@aahframework.org",
 		Roles:       []string{"employee", "manager", "admin"},
 		Permissions: []string{"user:read,edit,delete:reportee"},
 	}

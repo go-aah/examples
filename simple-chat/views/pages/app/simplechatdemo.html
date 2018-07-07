@@ -1,0 +1,37 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.chat_demo.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="header">
+    <a href="{{ rurl . "index" }}">
+    <img src="/static/img/aah-logo-64x64.png" alt="aah logo"/>
+    </a>
+    <h2>Simple Chat</h2>    
+    <div id="chatStatus" class="chat-status"></div>
+  </div>
+  <ul id="chatMessages" class="chat-messages"></ul>
+  <form id="simpleChatForm" action="">
+    <input id="msgBox" autocomplete="off" /><button>Send</button>
+  </form>
+  <script type="text/javascript">
+  // http://youmightnotneedjquery.com/#ready
+  function ready(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+
+  ready(function() {
+    var chatWebSocket = connectWebSocket('ws://localhost:8080/simple-chat');
+     on('simpleChatForm', 'submit', function (e) {
+       if (e.preventDefault) { e.preventDefault(); }
+       chatWebSocket.send(byId('msgBox').value);
+       byId('msgBox').value = "";
+       return false;
+     });
+  });
+  </script>
+{{- end }}

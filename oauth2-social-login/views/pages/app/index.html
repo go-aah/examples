@@ -1,0 +1,21 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.index.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="container">
+    <div class="row text-center welcome-msg">
+        <img src="/static/img/aah-framework-logo.png" alt="aah framework logo"/>
+        <h1>{{ .Greet.Message }}</h1>
+
+        <br><br>
+        <p><h3>Login with</h3></p>
+        <br>
+        <div class="">
+          <a href="{{ rurl . "facebook_auth_login__aah" }}" class="fa fa-facebook"></a>&nbsp;&nbsp;
+          <a href="{{ rurl . "google_auth_login__aah" }}" class="fa fa-google"></a>&nbsp;&nbsp;
+          <a href="{{ rurl . "github_auth_login__aah" }}" class="fa fa-github"></a>
+        </div>
+    </div>
+  </div>
+{{- end }}

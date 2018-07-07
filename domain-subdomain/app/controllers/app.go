@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"aahframework.org/aah.v0"
-	"github.com/go-aah/tutorials/domain-subdomain/app/models"
+	"aahframework.org/examples/domain-subdomain/app/models"
 )
 
 // AppController struct application controller
@@ -11,12 +11,12 @@ type AppController struct {
 }
 
 // Index method is application home page.
-func (a *AppController) Index() {
+func (c *AppController) Index() {
 	data := aah.Data{
 		"Greet": models.Greet{
-			Message: "Tutorials  - Domain, Subdomain, and Wildcard Subdomain",
+			Message: "Example  - Domain, Subdomain, and Wildcard Subdomain",
 		},
 	}
 
-	a.Reply().Ok().HTML(data)
+	c.Reply().Ok().HTML(data)
 }

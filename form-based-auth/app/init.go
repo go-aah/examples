@@ -4,6 +4,8 @@
 package main
 
 import (
+	"aahframework.org/examples/form-based-auth/app/security"
+
 	"aahframework.org/aah.v0"
 
 	// Registering HTML minifier for web application
@@ -36,12 +38,13 @@ func init() {
 	//
 	// aah.OnStart(db.Connect)
 	// aah.OnStart(cache.Load)
+	aah.OnStart(SubscribeHTTPEvents)
 
-	// Event: OnShutdown
+	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.
 	//
-	// aah.OnShutdown(cache.Flush)
-	// aah.OnShutdown(db.Disconnect)
+	// aah.OnPostShutdown(cache.Flush)
+	// aah.OnPostShutdown(db.Disconnect)
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Middleware's
@@ -50,7 +53,7 @@ func init() {
 	// Executed in the order they are defined. It is recommended; NOT to change
 	// the order of pre-defined aah framework middleware's.
 	//__________________________________________________________________________
-	aah.Middlewares(
+	aah.AppHTTPEngine().Middlewares(
 		aah.RouteMiddleware,
 		aah.CORSMiddleware,
 		aah.BindMiddleware,
@@ -101,4 +104,44 @@ func init() {
 	//
 	// // Add your validation funcs
 
+}
+
+//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+// HTTP Events
+//
+// Subscribing HTTP events on app start.
+//__________________________________________________________________________
+
+func SubscribeHTTPEvents(_ *aah.Event) {
+	he := aah.AppHTTPEngine()
+
+	// Event: OnRequest
+	// Doc: https://docs.aahframework.org/server-extension.html#event-onrequest
+	//
+	// he.OnRequest(myserverext.OnRequest)
+
+	// Event: OnPreReply
+	// Doc: https://docs.aahframework.org/server-extension.html#event-onprereply
+	//
+	// he.OnPreReply(myserverext.OnPreReply)
+
+	// Event: OnHeaderReply
+	// Doc: https://docs.aahframework.org/server-extension.html#event-onheaderreply
+	//
+	// he.OnHeaderReply(myserverext.OnHeaderReply)
+
+	// Event: OnPostReply
+	// Doc: https://docs.aahframework.org/server-extension.html#event-onpostreply
+	//
+	// he.OnPostReply(myserverext.OnPostReply)
+
+	// Event: OnPreAuth
+	// Doc: https://docs.aahframework.org/server-extension.html#event-onpreauth
+	//
+	// he.OnPreAuth(myserverext.OnPreAuth)
+
+	// Event: OnPostAuth
+	// Doc: https://docs.aahframework.org/server-extension.html#event-onpostauth
+	//
+	he.OnPostAuth(security.PostAuthEvent)
 }

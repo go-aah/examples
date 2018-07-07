@@ -9,8 +9,6 @@
     It is recommended to use POST for logout
     Good read here: https://stackoverflow.com/questions/3521290/logout-get-or-post
     -->
-		
-    <!-- This could be used for logout with Anti-CSRF protection -->
 	</form>
 
 	<script>
@@ -52,12 +50,12 @@
               {{ if (ispermitted . "users:manage:view") (hasanyrole . "manager" "administrator") }}
               <tr>
                 <td><a href="{{ rurl . "manage_users" }}">Manage Users</a></td>
-                <td>Shown to users who have permission "users:manage:view"</td>
+                <td>Shown to users who have either "manager" or "administrator" role and permission "users:manage:view"</td>
               </tr>
               {{ end }}
               <tr>
                 <td><a href="javascript:logoutSubmit();">Logout</a></td>
-                <td>To logout from tutorial application</td>
+                <td>To logout from example application</td>
               </tr>
             </tbody>
           </table>

@@ -1,5 +1,5 @@
 // Copyright (c) Jeevanandam M. (https://github.com/jeevatkm)
-// go-aah/tutorials source code and usage is governed by a MIT style
+// aahframework.org/examples source code and usage is governed by a MIT style
 // license that can be found in the LICENSE file.
 
 package controllers
@@ -12,6 +12,6 @@ type AppController struct {
 }
 
 // Index method is application home page.
-func (a *AppController) Index() {
-	a.Reply().Ok()
+func (c *AppController) Index() {
+	c.Reply().Ok()
 }

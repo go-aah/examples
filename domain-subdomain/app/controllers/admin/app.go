@@ -7,11 +7,11 @@ type AppController struct {
 	*aah.Context
 }
 
-// Dashboard method is admin dashcard page for tutorials.
-func (a *AppController) Dashboard() {
+// Dashboard method is admin dashboard page for examples.
+func (c *AppController) Dashboard() {
 
-	a.Reply().Ok().HTML(aah.Data{
-		"Subdomain": a.Subdomain(),
+	c.Reply().Ok().HTML(aah.Data{
+		"Subdomain": c.Subdomain(),
 		"Message":   "I'm in admin dashboard page",
 	})
 

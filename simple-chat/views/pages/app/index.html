@@ -1,0 +1,28 @@
+{{ define "title" -}}
+<title>{{ i18n . "label.pages.app.index.title" }}</title>
+{{- end }}
+
+{{ define "body" -}}
+  <div class="container">
+    <div class="row text-center welcome-msg">
+        <img src="/static/img/aah-logo-64x64.png" alt="aah framework logo"/>
+        <h2>Welcome to aah framework - WebSocket Example</h2>
+        <h2>Simple Chat</h2>
+    </div>
+    <div id="showcases">
+      <div class="col-xs-offset-2 col-md-offset-3">
+        <h4>This example application showcases:</h4>
+      </div>
+      <div class="col-xs-offset-3 col-md-offset-4">
+        <ul>
+          <li>Reading Text from WebSocket client</li>
+          <li>Replying Text to WebSocket client</li>
+          <li>Basis of Subscribing to WebSocket events</li>
+        </ul>
+      </div>
+      <div class="text-center"><br>
+        <a href="{{ rurl . "simple_chat_demo" }}" class="btn btn-success">Let's chat &#x1F60A;</a>
+      </div>
+    </div>
+  </div>
+{{- end }}

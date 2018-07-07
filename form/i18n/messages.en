@@ -1,9 +1,8 @@
-#############################################
+# ---------------------------------------------------------------------------
 # i18n messages for form application
 #
-# Complete configuration reference:
-#   https://docs.aahframework.org/i18n.html
-#############################################
+# Doc: https://docs.aahframework.org/i18n.html
+# ---------------------------------------------------------------------------
 
 # This structure is example purpose
 # So choose your suitable structure for your application
@@ -12,11 +11,11 @@ label {
   pages {
     app {
       index {
-        title = "Form Submission Tutorial - Welcome to aah Go web framework"
+        title = "Form Submission Example - Welcome to aah Go web framework"
       }
 
       user_profile {
-        title = "User Profile - Form Submission Tutorial | aah Go web framework"
+        title = "User Profile - Form Submission Example | aah Go web framework"
 
         form {
           first_name = "First Name"

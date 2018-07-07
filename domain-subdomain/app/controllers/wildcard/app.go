@@ -2,7 +2,7 @@ package wildcard
 
 import (
 	"aahframework.org/aah.v0"
-	"github.com/go-aah/tutorials/domain-subdomain/app/controllers"
+	"aahframework.org/examples/domain-subdomain/app/controllers"
 )
 
 // AppController is wildcard controller.
@@ -10,11 +10,11 @@ type AppController struct {
 	controllers.AppController
 }
 
-// Entry method is wildcard subdomain controller for tutorials.
-func (a *AppController) Entry() {
+// Entry method is wildcard subdomain controller for examples.
+func (c *AppController) Entry() {
 
-	a.Reply().Ok().HTML(aah.Data{
-		"Subdomain": a.Subdomain(),
+	c.Reply().Ok().HTML(aah.Data{
+		"Subdomain": c.Subdomain(),
 		"Message":   "I'm in wildcard app controller page",
 	})
 
