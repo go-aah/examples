@@ -54,7 +54,7 @@ Response:
 
 ### Get Access Token (JWT)
 
-Send POST request to http://localhost:8080//v1/token
+Send POST request to http://localhost:8080/v1/token
 
 Request Body:
 
