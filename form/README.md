@@ -8,13 +8,14 @@ This example demonstrates how form submission happens in aah framework. Form sub
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/form
+cd aah-examples/form
+aah run
 ```
 
 ### Visit this URL

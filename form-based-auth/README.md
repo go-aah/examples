@@ -10,13 +10,14 @@ Learn more about [Security design](https://docs.aahframework.org/security-design
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/form-based-auth
+cd aah-examples/form-based-auth
+aah run
 ```
 
 ### Visit this URL

@@ -10,7 +10,7 @@ Learn more about [OAuth2 Auth scheme](https://docs.aahframework.org/auth-schemes
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
@@ -22,7 +22,8 @@ First, configure the OAuth2 provider(s) Client ID and Secret in the `security.co
 **Step 2:**
 
 ```bash
-aah r -i aahframework.org/examples/oauth2-social-login
+cd aah-examples/oauth2-social-login
+aah run
 ```
 
 ### Visit this URL

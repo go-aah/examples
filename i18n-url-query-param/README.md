@@ -16,13 +16,14 @@ Learn how i18n works in aah - https://docs.aahframework.org/i18n.html.
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/i18n-url-query-param
+cd aah-examples/i18n-url-query-param
+aah run
 ```
 
 ### Visit this URL

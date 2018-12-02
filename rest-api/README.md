@@ -10,13 +10,14 @@ Learn more about [REST API versioning strategies](https://docs.aahframework.org/
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/rest-api
+cd aah-examples/rest-api
+aah run
 ```
 
 ### Use a preferred REST client to make a request
