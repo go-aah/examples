@@ -1,6 +1,6 @@
 package admin
 
-import "aahframework.org/aah.v0"
+import "aahframe.work"
 
 // AppController is Admin App controller.
 type AppController struct {
