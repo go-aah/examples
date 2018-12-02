@@ -10,13 +10,14 @@ Learn more about [aah WebSocket](https://docs.aahframework.org/websocket.html)
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/simple-chat
+cd aah-examples/simple-chat
+aah run
 ```
 
 ### Visit this URL

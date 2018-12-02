@@ -1,6 +1,6 @@
 package security
 
-import "aahframework.org/aah.v0"
+import "aahframe.work"
 
 // PostAuthEvent method called after successful authentication and authorization.
 func PostAuthEvent(e *aah.Event) {

@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 
 	"aahframework.org/examples/oauth2-social-login/app/models"
 )

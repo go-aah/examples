@@ -3,7 +3,7 @@ package websockets
 import (
 	"html"
 
-	"aahframework.org/ws.v0"
+	"aahframe.work/ws"
 )
 
 // SimpleChatWebSocket hold simple chat implementation.

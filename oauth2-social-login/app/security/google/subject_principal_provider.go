@@ -3,11 +3,11 @@ package facebook
 import (
 	"fmt"
 
-	"aahframework.org/aah.v0"
-	"aahframework.org/config.v0"
-	"aahframework.org/essentials.v0"
-	"aahframework.org/security.v0/authc"
-	"aahframework.org/security.v0/scheme"
+	"aahframe.work"
+	"aahframe.work/config"
+	"aahframe.work/essentials"
+	"aahframe.work/security/authc"
+	"aahframe.work/security/scheme"
 	"golang.org/x/oauth2"
 	google "google.golang.org/api/oauth2/v2"
 )
@@ -27,7 +27,7 @@ func (a *SubjectPrincipalProvider) Init(appCfg *config.Config) error {
 // Principals method is called to get Subject's Principals information.
 func (a *SubjectPrincipalProvider) Principal(keyName string, v ess.Valuer) ([]*authc.Principal, error) {
 	token := v.Get(aah.KeyOAuth2Token).(*oauth2.Token)
-	googleAuth := aah.AppSecurityManager().AuthScheme(keyName).(*scheme.OAuth2)
+	googleAuth := aah.App().SecurityManager().AuthScheme(keyName).(*scheme.OAuth2)
 	googleService, err := google.New(googleAuth.Client(token))
 	if err != nil {
 		return nil, fmt.Errorf("unable to create google service")

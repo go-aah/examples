@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"log"
 
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 
 	"github.com/dgrijalva/jwt-go"
 )
@@ -25,9 +25,9 @@ var (
 
 // LoadJWTconfig JWT setting into variable on server startup.
 func LoadJWTconfig(_ *aah.Event) {
-	JWTSigningMethod = aah.AppConfig().StringDefault("security.auth_schemes.jwt_auth.sign.method", "HS256")
+	JWTSigningMethod = aah.App().Config().StringDefault("security.auth_schemes.jwt_auth.sign.method", "HS256")
 
-	if signingKey, found := aah.AppConfig().String("security.auth_schemes.jwt_auth.sign.key"); found {
+	if signingKey, found := aah.App().Config().String("security.auth_schemes.jwt_auth.sign.key"); found {
 		JWTSigningKey = []byte(signingKey)
 	} else {
 		log.Fatal("security.auth_schemes.jwt_auth.sign.key is required")

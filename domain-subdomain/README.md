@@ -8,7 +8,7 @@ This example application gives insights on how to use domains, subdomains and wi
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Configure local DNS mapping
@@ -24,7 +24,8 @@ This [rackspace article](https://support.rackspace.com/how-to/modify-your-hosts-
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/domain-subdomain
+cd aah-examples/domain-subdomain
+aah run
 ```
 
 ### Visit these URLs

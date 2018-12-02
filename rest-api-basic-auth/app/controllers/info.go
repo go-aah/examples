@@ -7,9 +7,9 @@ package controllers
 import (
 	"net/http"
 
-	"aahframework.org/essentials.v0"
+	"aahframe.work/essentials"
 
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 
 	"aahframework.org/examples/rest-api-basic-auth/app/models"
 )

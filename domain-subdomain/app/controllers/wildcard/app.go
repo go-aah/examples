@@ -1,7 +1,7 @@
 package wildcard
 
 import (
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 	"aahframework.org/examples/domain-subdomain/app/controllers"
 )
 

@@ -1,6 +1,6 @@
 package websockets
 
-import "aahframework.org/ws.v0"
+import "aahframe.work/ws"
 
 // HandleEvents method is to demostrate aah WebSocket events published for each
 // WebSocket connection made to aah server and its life cycle.

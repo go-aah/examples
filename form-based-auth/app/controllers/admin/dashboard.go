@@ -7,7 +7,7 @@ package admin
 import (
 	"net/http"
 
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 )
 
 // DashboardController struct demo implementation of admin scope.

@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"aahframework.org/aah.v0"
-	"aahframework.org/essentials.v0"
+	"aahframe.work"
+	"aahframe.work/essentials"
 	"aahframework.org/examples/form-fileupload/app/models"
 	"aahframework.org/examples/form-fileupload/app/util"
 )

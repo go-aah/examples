@@ -5,6 +5,8 @@ aah.go
 aah_*_vfs.go
 *.pid
 build/
+app/generated
+# aah application - end
 vendor/*/
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)

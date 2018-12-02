@@ -1,9 +1,9 @@
 package security
 
 import (
-	"aahframework.org/config.v0"
-	"aahframework.org/security.v0/authc"
-	"aahframework.org/security.v0/authz"
+	"aahframe.work/config"
+	"aahframe.work/security/authc"
+	"aahframe.work/security/authz"
 )
 
 var _ authz.Authorizer = (*AuthorizationProvider)(nil)

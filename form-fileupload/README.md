@@ -12,13 +12,14 @@ fileSize, err := Req.SaveFile("userProfileImage", "/Users/jeeva/user-profile-upl
 ### Get aah examples
 
 ```bash
-git clone https://github.com/go-aah/examples.git $GOPATH/src/aahframework.org/examples
+git clone https://github.com/go-aah/examples.git aah-examples
 ```
 
 ### Run this example
 
 ```bash
-aah r -i aahframework.org/examples/form-fileupload
+cd aah-examples/form-fileupload
+aah run
 ```
 
 ### Visit this URL
