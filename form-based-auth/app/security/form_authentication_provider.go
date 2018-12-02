@@ -5,10 +5,10 @@
 package security
 
 import (
-	"aahframework.org/aah.v0"
-	"aahframework.org/config.v0"
+	"aahframe.work"
+	"aahframe.work/config"
+	"aahframe.work/security/authc"
 	"aahframework.org/examples/form-based-auth/app/models"
-	"aahframework.org/security.v0/authc"
 )
 
 var _ authc.Authenticator = (*FormAuthenticationProvider)(nil)

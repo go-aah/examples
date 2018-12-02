@@ -6,10 +6,10 @@ package main
 import (
 	"aahframework.org/examples/form-based-auth/app/security"
 
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 
 	// Registering HTML minifier for web application
-	_ "github.com/aah-cb/minify"
+	_ "aahframe.work/minify/html"
 )
 
 func init() {
@@ -29,22 +29,22 @@ func init() {
 	//__________________________________________________________________________
 
 	// Event: OnInit
-	// Published right after the `aah.AppConfig()` is loaded.
+	// Published right after the `aah.App().Config()` is loaded.
 	//
-	// aah.OnInit(config.LoadRemote)
+	// aah.App().OnInit(config.LoadRemote)
 
 	// Event: OnStart
 	// Published right before the start of aah go Server.
 	//
-	// aah.OnStart(db.Connect)
-	// aah.OnStart(cache.Load)
-	aah.OnStart(SubscribeHTTPEvents)
+	// aah.App().OnStart(db.Connect)
+	// aah.App().OnStart(cache.Load)
+	aah.App().OnStart(SubscribeHTTPEvents)
 
 	// Event: OnPostShutdown
 	// Published on receiving OS Signals `SIGINT` or `SIGTERM`.
 	//
-	// aah.OnPostShutdown(cache.Flush)
-	// aah.OnPostShutdown(db.Disconnect)
+	// aah.App().OnPostShutdown(cache.Flush)
+	// aah.App().OnPostShutdown(db.Disconnect)
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Middleware's
@@ -53,7 +53,7 @@ func init() {
 	// Executed in the order they are defined. It is recommended; NOT to change
 	// the order of pre-defined aah framework middleware's.
 	//__________________________________________________________________________
-	aah.AppHTTPEngine().Middlewares(
+	aah.App().HTTPEngine().Middlewares(
 		aah.RouteMiddleware,
 		aah.CORSMiddleware,
 		aah.BindMiddleware,
@@ -71,13 +71,13 @@ func init() {
 	// Add Application Error Handler
 	// Doc: https://docs.aahframework.org/error-handling.html
 	//__________________________________________________________________________
-	// aah.SetErrorHandler(AppErrorHandler)
+	// aah.App().SetErrorHandler(AppErrorHandler)
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Add Custom Template Functions
 	// Doc: https://docs.aahframework.org/template-funcs.html
 	//__________________________________________________________________________
-	// aah.AddTemplateFunc(template.FuncMap{
+	// aah.App().AddTemplateFunc(template.FuncMap{
 	// // ...
 	// })
 
@@ -85,13 +85,13 @@ func init() {
 	// Add Custom Session Store
 	// Doc: https://docs.aahframework.org/session.html
 	//__________________________________________________________________________
-	// aah.AddSessionStore("redis", &RedisSessionStore{})
+	// aah.App().AddSessionStore("redis", &RedisSessionStore{})
 
 	//‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 	// Add Custom value Parser
 	// Doc: https://docs.aahframework.org/request-parameters-auto-bind.html
 	//__________________________________________________________________________
-	// if err := aah.AddValueParser(reflect.TypeOf(CustomType{}), customParser); err != nil {
+	// if err := aah.App().AddValueParser(reflect.TypeOf(CustomType{}), customParser); err != nil {
 	//   log.Error(err)
 	// }
 
@@ -113,7 +113,7 @@ func init() {
 //__________________________________________________________________________
 
 func SubscribeHTTPEvents(_ *aah.Event) {
-	he := aah.AppHTTPEngine()
+	he := aah.App().HTTPEngine()
 
 	// Event: OnRequest
 	// Doc: https://docs.aahframework.org/server-extension.html#event-onrequest
