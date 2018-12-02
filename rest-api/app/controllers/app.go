@@ -5,7 +5,7 @@
 package controllers
 
 import (
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 	"aahframework.org/examples/rest-api/app/models"
 )
 

@@ -7,10 +7,10 @@ package security
 import (
 	"strings"
 
-	"aahframework.org/config.v0"
-	"aahframework.org/essentials.v0"
-	"aahframework.org/log.v0"
-	"aahframework.org/security.v0/authc"
+	"aahframe.work/config"
+	"aahframe.work/essentials"
+	"aahframe.work/log"
+	"aahframe.work/security/authc"
 	"github.com/dgrijalva/jwt-go"
 )
 

@@ -3,13 +3,13 @@ package util
 import (
 	"path/filepath"
 
-	"aahframework.org/aah.v0"
-	"aahframework.org/essentials.v0"
-	"aahframework.org/log.v0"
+	"aahframe.work"
+	"aahframe.work/essentials"
+	"aahframe.work/log"
 )
 
 func UploadsPath() string {
-	return filepath.Join(aah.AppBaseDir(), "uploads")
+	return filepath.Join(aah.App().BaseDir(), "uploads")
 }
 
 func CreateUploadsDirectory(_ *aah.Event) {

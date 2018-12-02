@@ -5,9 +5,9 @@
 package security
 
 import (
-	"aahframework.org/config.v0"
+	"aahframe.work/config"
+	"aahframe.work/security/authc"
 	"aahframework.org/examples/rest-api-basic-auth/app/models"
-	"aahframework.org/security.v0/authc"
 )
 
 var _ authc.Authenticator = (*BasicAuthenticationProvider)(nil)

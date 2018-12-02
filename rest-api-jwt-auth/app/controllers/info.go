@@ -7,7 +7,7 @@ package controllers
 import (
 	"net/http"
 
-	"aahframework.org/aah.v0"
+	"aahframe.work"
 	"aahframework.org/examples/rest-api-jwt-auth/app/models"
 )
 

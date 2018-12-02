@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"net/http"
 
-	"aahframework.org/aah.v0"
-	"aahframework.org/config.v0"
-	"aahframework.org/essentials.v0"
-	"aahframework.org/security.v0/authc"
-	"aahframework.org/security.v0/scheme"
+	"aahframe.work"
+	"aahframe.work/config"
+	"aahframe.work/essentials"
+	"aahframe.work/security/authc"
+	"aahframe.work/security/scheme"
 	"github.com/google/go-github/github"
 	"golang.org/x/oauth2"
 )
@@ -29,7 +29,7 @@ func (a *SubjectPrincipalProvider) Init(appCfg *config.Config) error {
 // Principals method is called to get Subject's Principals information.
 func (a *SubjectPrincipalProvider) Principal(keyName string, v ess.Valuer) ([]*authc.Principal, error) {
 	token := v.Get(aah.KeyOAuth2Token).(*oauth2.Token)
-	githubAuth := aah.AppSecurityManager().AuthScheme(keyName).(*scheme.OAuth2)
+	githubAuth := aah.App().SecurityManager().AuthScheme(keyName).(*scheme.OAuth2)
 	githubClient := github.NewClient(githubAuth.Client(token))
 
 	userInfo, resp, err := githubClient.Users.Get(context.Background(), "")

@@ -1,14 +1,14 @@
 package facebook
 
 import (
-	"aahframework.org/aah.v0"
-	"aahframework.org/ahttp.v0"
-	"aahframework.org/config.v0"
-	"aahframework.org/essentials.v0"
-	"aahframework.org/security.v0/authc"
-	"aahframework.org/security.v0/scheme"
-	"github.com/go-resty/resty"
+	aah "aahframe.work"
+	"aahframe.work/ahttp"
+	"aahframe.work/config"
+	ess "aahframe.work/essentials"
+	"aahframe.work/security/authc"
+	"aahframe.work/security/scheme"
 	"golang.org/x/oauth2"
+	"gopkg.in/resty.v1"
 )
 
 var _ authc.PrincipalProvider = (*SubjectPrincipalProvider)(nil)
@@ -32,7 +32,7 @@ func (a *SubjectPrincipalProvider) Init(appCfg *config.Config) error {
 // Principals method is called to get Subject's Principals information.
 func (a *SubjectPrincipalProvider) Principal(keyName string, v ess.Valuer) ([]*authc.Principal, error) {
 	token := v.Get(aah.KeyOAuth2Token).(*oauth2.Token)
-	fbAuth := aah.AppSecurityManager().AuthScheme(keyName).(*scheme.OAuth2)
+	fbAuth := aah.App().SecurityManager().AuthScheme(keyName).(*scheme.OAuth2)
 	fbClient := resty.NewWithClient(fbAuth.Client(token))
 
 	resp, err := fbClient.R().

@@ -4,7 +4,7 @@
 
 package controllers
 
-import "aahframework.org/aah.v0"
+import "aahframe.work"
 
 // AppController struct application controller
 type AppController struct {

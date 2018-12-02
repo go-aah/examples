@@ -7,8 +7,8 @@ package controllers
 import (
 	"time"
 
-	"aahframework.org/aah.v0"
-	"aahframework.org/essentials.v0"
+	"aahframe.work"
+	"aahframe.work/essentials"
 	"aahframework.org/examples/rest-api-jwt-auth/app/models"
 	"aahframework.org/examples/rest-api-jwt-auth/app/security"
 	"github.com/dgrijalva/jwt-go"

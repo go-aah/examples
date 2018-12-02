@@ -5,10 +5,10 @@
 package security
 
 import (
-	"aahframework.org/config.v0"
+	"aahframe.work/config"
+	"aahframe.work/security/authc"
+	"aahframe.work/security/authz"
 	"aahframework.org/examples/rest-api-basic-auth/app/models"
-	"aahframework.org/security.v0/authc"
-	"aahframework.org/security.v0/authz"
 )
 
 var _ authz.Authorizer = (*BasicAuthorizationProvider)(nil)
